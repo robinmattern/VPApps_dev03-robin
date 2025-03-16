@@ -21,7 +21,7 @@ def split_into_chunks(text, chunk_size):
 
     return chunks
 
-file_path = '/Users/matt/Downloads/warandpeace.txt'  #
+file_path = '/lusers/shared/repos/videoprojects/Downloads/warandpeace.txt'  #
 long_string = read_file(file_path)
 chunk_size = 500
 chunks = split_into_chunks(long_string, chunk_size)

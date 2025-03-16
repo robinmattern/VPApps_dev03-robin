@@ -21,8 +21,9 @@ function splitIntoChunks(text: string, chunkSize: number): string[] {
   return chunks;
 }
 
-
-const path = "/Users/matt/Downloads/warandpeace.txt";
+const path = "/users/shared/repos/docs/txt/constitution-bt.txt";
+//const path = "/users/shared/repos/docs/txt/marine.txt";
+// const path = "/users/shared/repos/docs/txt/the-brothers-karamazov.txt";
 const file = Bun.file(path);
 
 const chunks = splitIntoChunks(await file.text(), 500);
@@ -33,7 +34,7 @@ let i = 0
 for await (const c of chunks) {
   i++;
   const b = await ollama.embeddings({
-    model: "llama2",
+    model: "llama3",
     prompt: c
   })
   console.log(i);

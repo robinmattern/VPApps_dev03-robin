@@ -34,7 +34,7 @@ One of my favorites is this Poetroid Camera, a play on Polaroid, which having wo
 
 Right up top I read in a style and an image path from the command line. Then I create a new ollama object. I read in the image file into a buffer and then base64 encode the image. 
 
-Now I call the ollama chat endpoint, passing the llava model a simple prompt and the image. The first attempt at this I had it write the poem itself. But Llava seems to suck at coming up with different styles of poems. So instead I just have llava describe the image. Then I passed the description to llama2 and had it make a poem in the style of someone. And it's pretty cool. Let's try one. 
+Now I call the ollama chat endpoint, passing the llava model a simple prompt and the image. The first attempt at this I had it write the poem itself. But Llava seems to suck at coming up with different styles of poems. So instead I just have llava describe the image. Then I passed the description to llama3 and had it make a poem in the style of someone. And it's pretty cool. Let's try one. 
 
 It’s a picture of a motion sensor from onvis and it does an ok job. Next is a blurry image of a stream deck which it interpreted as some DJ equipment. I'll skip that one. But the third try is a view of the sunset from our house. You can see Rainier over here and downtown Seattle. Gorgeous. And here is what it comes up with for Dr Seuss:
 

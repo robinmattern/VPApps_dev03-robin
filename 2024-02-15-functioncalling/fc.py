@@ -23,7 +23,7 @@ schema = {
 }
 
 payload = {
-  "model": "llama2", 
+  "model": "llama3", 
   "messages": [
     {"role": "system", "content": f"You are a helpful AI assistant. The user will enter a country name and the assistant will return the decimal latitude and decimal longitude of the capital of the country. Output in JSON using the schema defined here: {schema}."}, 
     {"role": "user", "content": "France"}, 

@@ -1,5 +1,5 @@
 import ollama
 
-output = ollama.generate(model="llama2")
+output = ollama.generate(model="llama3")
 
 print(output)

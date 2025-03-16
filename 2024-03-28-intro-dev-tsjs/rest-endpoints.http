@@ -4,7 +4,7 @@
 POST http://localhost:11434/api/generate
 
 {
-  "model": "llama2"
+  "model": "llama3"
 }
 
 
@@ -13,7 +13,7 @@ POST http://localhost:11434/api/generate
 POST http://localhost:11434/api/generate
 
 {
-  "model": "llama2",
+  "model": "llama3",
   "prompt": "Why is the sky blue"
 }
 
@@ -22,7 +22,7 @@ POST http://localhost:11434/api/generate
 POST http://localhost:11434/api/generate
 
 {
-  "model": "llama2",
+  "model": "llama3",
   "prompt": "Why is the sky blue", 
   "stream": false
 }
@@ -32,7 +32,7 @@ POST http://localhost:11434/api/generate
 POST http://localhost:11434/api/generate
 
 {
-  "model": "llama2",
+  "model": "llama3",
   "prompt": "list 5 colors. Respond in json format", 
   "stream": false, 
   "format": "json"
@@ -43,7 +43,7 @@ POST http://localhost:11434/api/generate
 POST http://localhost:11434/api/generate
 
 {
-  "model": "llama2",
+  "model": "llama3",
   "prompt": "Particle Physics", 
   "stream": false, 
   "system": "The user will provide a concept. Explain the concept to a 5 year old, using lots of stories and visual descriptions they will be able to understand.", 
@@ -56,7 +56,7 @@ POST http://localhost:11434/api/generate
 POST http://localhost:11434/api/generate
 
 {
-  "model": "llama2",
+  "model": "llama3",
   "prompt": "Explain Particle Physics to a 5 year old, using lots of stories and visual descriptions they will be able to understand.", 
   "stream": false, 
   "raw": true
@@ -78,7 +78,7 @@ POST http://localhost:11434/api/generate
 POST http://localhost:11434/api/chat
 
 {
-  "model": "llama2", 
+  "model": "llama3", 
   "messages": [
     { "role": "user", "content": "Why is the sky blue"}
   ]

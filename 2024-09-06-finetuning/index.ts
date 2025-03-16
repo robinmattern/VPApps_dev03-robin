@@ -34,7 +34,7 @@ async function readTextFilesFromDirectory(directoryPath: string) {
 const fileParagraphs = []
 // Example usage
 const directoryPath =
-	"/Users/matt/documents/MainVault/Content/deliverables/main";
+	"/lusers/shared/repos/videoprojects/documents/MainVault/Content/deliverables/main";
 const fileContents = await readTextFilesFromDirectory(directoryPath);
 for (const file of fileContents) {
   const paragraphs = file.content.split("\n").filter(paragraph => paragraph.trim().length > 100)

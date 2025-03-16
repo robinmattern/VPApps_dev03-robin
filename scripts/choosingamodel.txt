@@ -1,4 +1,4 @@
-You just installed Ollama on your computer and you have played around with the llama2 or mistral model. And now you want to try out some other models and you aren't sure which to use. What are your options?
+You just installed Ollama on your computer and you have played around with the llama3 or mistral model. And now you want to try out some other models and you aren't sure which to use. What are your options?
 
 Well, the best place to learn about other models is the Ollama Library. Just go to ollama.ai and navigate to the Models link. This is a list of all the models available on the official library. You can sort this list by Featured, which is ordered by what the team thinks is best for most. By the most popular, which looks at which models have been downloaded the most, in the last few weeks. And by most recent, which is how you can discover the newest models. 
 

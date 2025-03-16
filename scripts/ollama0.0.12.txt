@@ -12,7 +12,7 @@ The next improvement I want to cover is support for running k-quant models. Many
 
 Next is some performance improvements from enabling Accelerate. Accelerate is an apple feature that "provides high performance energy efficient computation on the cpu by leveraging it's vector processing capability"
 
-We can see this by running the llama2 model 11 and seeing that the CPU is having to work pretty hard to evaluate the prompt. The answer uses the GPU and is very efficient already. But when we switch over to 12 and run the same question, you will see that the prompt eval is much faster and used less cpu.
+We can see this by running the llama3 model 11 and seeing that the CPU is having to work pretty hard to evaluate the prompt. The answer uses the GPU and is very efficient already. But when we switch over to 12 and run the same question, you will see that the prompt eval is much faster and used less cpu.
 
 In the Discord, we saw a few folks who were trying to access the Ollama API from a website. If you have done anything like this in the past you may know about CORS and how much of a pain it is. But now you can access the API from websites on localhost.
 

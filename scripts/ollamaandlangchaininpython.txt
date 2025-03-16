@@ -2,7 +2,7 @@ Can you talk to your own documents to get answers out of them? That’s the goal
 
 So let's say you have a document that you want to ask a question about. I am going to use this Wikipedia article about the horrible fires on Maui just a few days ago. The URL is on the screen. So how do you get started?
 
-Since we are using LangChain in this video, lets start with 'pip install langchain'. OK, now create a python file and start building. we first need to import Ollama. 'from langchain.llms import ollama'. Then we need to initiate our connection to a model on ollama. 'ollama = ollama base url = http :// localhost : 11434 and model = llama2'. we can specify any model here that either is on the ollama hub or that you have created locally. Now to test that that works, 'print ollama why is the sky blue'.  Now if we run that, we will see why the sky is blue. perfect. 
+Since we are using LangChain in this video, lets start with 'pip install langchain'. OK, now create a python file and start building. we first need to import Ollama. 'from langchain.llms import ollama'. Then we need to initiate our connection to a model on ollama. 'ollama = ollama base url = http :// localhost : 11434 and model = llama3'. we can specify any model here that either is on the ollama hub or that you have created locally. Now to test that that works, 'print ollama why is the sky blue'.  Now if we run that, we will see why the sky is blue. perfect. 
 
 Now we can work on loading the document. When I did this the first time, i needed the python module bs4, so run 'pip install bs4'. Now we can add the import for the loader: 'from langchain.document loaders import webbaseloader'. then load the document. 'loader = webbaseloader and the url,  then data = loader.load'. 
 

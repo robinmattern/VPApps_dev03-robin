@@ -2,7 +2,7 @@ import ollama from 'ollama';
 
 const prompt = "why is the sky blue";
 
-const output = await ollama.generate({ model: "llama2", prompt: prompt, stream: true })
+const output = await ollama.generate({ model: "llama3", prompt: prompt, stream: true })
 
 for await (const part of output) {
   process.stdout.write(part.response)

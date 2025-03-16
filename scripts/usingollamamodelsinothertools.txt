@@ -1,4 +1,4 @@
-	One of the great things about Ollama is that it makes it super easy to download models that work with Ollama. You just run `ollama pull llama2` or `ollama run llama2` and if you don't have the model, it starts downloading. But lets say you also want to use the model in lmstudio. Well, now you go to `.ollama/models/blobs` and good luck figuring out which one is llama2. 
+	One of the great things about Ollama is that it makes it super easy to download models that work with Ollama. You just run `ollama pull llama3` or `ollama run llama3` and if you don't have the model, it starts downloading. But lets say you also want to use the model in lmstudio. Well, now you go to `.ollama/models/blobs` and good luck figuring out which one is llama3. 
 	
 	So I created a simple shell script that creates symlinks to a folder of your choosing. You can find the script in the github repo, matts shell scripts and its called syncmodels. This was written for macos, so you might need to adjust it a bit for linux and windows.
 	

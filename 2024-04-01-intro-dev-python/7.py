@@ -23,6 +23,6 @@ msgs = [
   { "role": "assistant", "content": "{\n  \"city\": \"Paris\",\n  \"industry\": \"Fashion\",\n  \"fun\": \"Take a stroll along the Seine River and enjoy the city\'s iconic landmarks while aboard a river cruise.\"\n}" }, 
   {"role": "user", "content": "Amsterdam"}
 ]
-output = ollama.chat(model="llama2", messages=msgs )
+output = ollama.chat(model="llama3", messages=msgs )
 
 print(output["message"]["content"])
