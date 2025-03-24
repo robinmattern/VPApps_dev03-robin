@@ -21,7 +21,7 @@ function splitIntoChunks(text: string, chunkSize: number): string[] {
   return chunks;
 }
 
-const path = "/users/shared/repos/docs/txt/constitution-bt.txt";
+const path = "/users/shared/repos/documents/txt/constitution-bt.txt";
 //const path = "/users/shared/repos/docs/txt/marine.txt";
 // const path = "/users/shared/repos/docs/txt/the-brothers-karamazov.txt";
 const file = Bun.file(path);
