@@ -3,7 +3,7 @@ import { exists } from "https://deno.land/std@0.197.0/fs/mod.ts";
 import ollama from "ollama";
 import { LocalIndex } from "vectra";
 
-const mainModel = "llama3.1";
+const mainModel = "llama3:8b-instruct-q2_K";
 const sourceDocURL = "https://arxiv.org/html/2408.17024v1";
 const sourceDocCharLimit = 50000;
 
