@@ -1,0 +1,118 @@
+node interactive_search_v4.mjs
+Search Prompt: "lexington,va"
+AI Prompt: "."
+Fetching from: https://api.duckduckgo.com/?q=lexington%2Cva&format=json
+
+  API Response: {
+  "AbstractURL": "https://en.wikipedia.org/wiki/Lexington%2C_Virginia",
+  "Results": "",
+  "RelatedTopics":
+    <a href=\"https://duckduckgo.com/c/Lexington%2C_Virginia\">Lexington, Virginia Category</a> -- https://duckduckgo.com/c/Lexington%2C_Virginia\n
+    <a href=\"https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia\">National Register of Historic Places listings in Lexington, Virginia</a> - This is a list of the National Register of Historic Places listings in Lexington, Virginia. This is intended to be a complete list of the properties and districts on the National Register of Historic Places in the independent city of Lexington, Virginia, United States. -- https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia\n
+    <a href=\"https://duckduckgo.com/c/Rockbridge_County%2C_Virginia\">Rockbridge County, Virginia</a> -- https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+}
+
+  Found 5 URLs: [
+  'https://en.wikipedia.org/wiki/Lexington%2C_Virginia',
+  'https://duckduckgo.com/c/Lexington%2C_Virginia',
+  'https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia',
+  'https://duckduckgo.com/c/Rockbridge_County%2C_Virginia',
+  'https://duckduckgo.com/c/Cities_in_Virginia'
+]
+Fetching https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+Fetching https://duckduckgo.com/c/Lexington%2C_Virginia
+Fetching https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+Fetching https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+Fetching https://duckduckgo.com/c/Cities_in_Virginia
+
+    Lexington, Virginia has a total area of 2.5 square miles (6.54 km2), virtually all of which is land. The city's population was 7,320 in the year 2020, with 2,232 households and 1,080 families residing there. The Maury River forms the city's northeastern boundary. Lexington is within the Shenandoah Valley about 57 miles (92 km) east of the West Virginia border and is about 50 miles (80 km) north of Roanoke, Virginia. First settled in 1778 as Rockbridge County, it was then renamed to Lexington in 1860. The city has a total area of 2.5 square miles (6.54 km2), virtually all of which is land.
+
+    The climate in this area is characterized by hot, humid summers and mild to cool winters. According to the Köppen classification system, Lexington has a humid subtropical climate, similar to Northern Italy, abbreviated "Cfa" on climate maps.[12] Average monthly temperatures range from 34.9°F in January to 75.2°F in July.
+
+    The Hardiness zone is 7a.[14]
+
+    Lexington's primary economic activities stem from higher education and tourism. Places of interest include the Stonewall Jackson House, University Chapel, the George C. Marshall Library, Virginia Military Institute Museum, Museum of Military Memorabilia, and the downtown historic district. The non-profit Virginia Horse Center is a satellite agricultural research center.
+
+    In the city, there are two churches: the First Baptist Church along Main Street in the Lexington Historic District and the George C. Marshall Foundation. The Student Union at Washington and Lee University is located on campus and includes three residence halls and several other student organizations.
+
+    Lexington also contains a number of properties listed on the National Register of Historic Places, including Anderson Hollow Archaeological District, Cedar Hill Church and Cemeteries, Chapel Hill, Church Hill, Clifton, Hamilton Schoolhouse, Liberty Hall Site, Lylburn Downing School, Maple Hall, John Moore House, Mountain View Farm, Margaret E. Poague House, Springdale, Stone House, Sunnyside, Tankersley Tavern, Thorn Hill, Timber Ridge Presbyterian Church, and Willson House.
+
+    Lexington High School, designed by architect Charles M. Robinson and constructed in 1908, was typical of the modern public schools that cities built during the Progressive Era. University Chapel, George C. Marshall Foundation, Robert E. Lee grave site, found at Oak Grove Cemetery, Stetson's Farm, Washington and Lee University and Virginia Military Institute Museum, Museum of Military Memorabilia, the Virginia Horse Center and other small properties.
+
+    Lexington is a major city with a population of 7,320 and a total area of 2.5 square miles (6.54 km2). The city's economic activities are mainly from higher education and tourism.[1] There is also a number of historic landmarks in Lexington like the Stonewall Jackson House, University Chapel, George C. Marshall Foundation, Robert E. Lee grave site and other properties listed on the National Register of Historic Places.
+
+
+Ollama Run Statistics:
+    Model Name:        qwen2:0.5b
+    Context Window:    8000 bytes
+    Total Duration:    33.20 seconds
+    Prompt Eval Count: 6769 tokens
+    Eval Count:        670 tokens
+    Eval Duration:     25.10 seconds
+    Tokens per Second: 26.69
+
+-------------------------------------------------------------
+
+node interactive_search_v4.mjs
+Search Prompt: "lexington,va"
+AI Prompt: "."
+Fetching from: https://api.duckduckgo.com/?q=lexington%2Cva&format=json
+
+  API Response: {
+  "AbstractURL": "https://en.wikipedia.org/wiki/Lexington%2C_Virginia",
+  "Results": "",
+  "RelatedTopics": "<a href=\"https://duckduckgo.com/c/Lexington%2C_Virginia\">Lexington, Virginia Category</a> -- https://duckduckgo.com/c/Lexington%2C_Virginia\n   <a href=\"https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia\">National Register of Historic Places listings in Lexington, Virginia</a> - This is a list of the National Register of Historic Places listings in Lexington, Virginia. This is intended to be a complete list of the properties and districts on the National Register of Historic Places in the independent city of Lexington, Virginia, United States. -- https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia\n   <a href=\"https://duckduckgo.com/c/Rockbridge_County%2C_Virginia\">Rockbridge County, Virginia</a> -- https://duckduckgo.com/c/Rockbridge_County%2C_Virginia"
+}
+
+  Found 5 URLs: [
+  'https://en.wikipedia.org/wiki/Lexington%2C_Virginia',
+  'https://duckduckgo.com/c/Lexington%2C_Virginia',
+  'https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia',
+  'https://duckduckgo.com/c/Rockbridge_County%2C_Virginia',
+  'https://duckduckgo.com/c/Cities_in_Virginia'
+]
+Fetching https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+Fetching https://duckduckgo.com/c/Lexington%2C_Virginia
+Fetching https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+Fetching https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+Fetching https://duckduckgo.com/c/Cities_in_Virginia
+
+    Based on the provided articles, I can answer your question. Please note that the information is specific to Lexington, Virginia.
+
+    What is the population of Lexington, Virginia?
+
+    According to the U.S. Census Bureau (2020), the population of Lexington, Virginia is 7,320.
+
+    How many square miles does Lexington, Virginia cover?
+
+    The city has a total area of 2.52 square miles (6.54 km2).
+
+    What is the elevation of Lexington, Virginia?
+
+    The elevation of Lexington, Virginia is 1,063 feet (324 meters) above sea level.
+
+    What is the climate like in Lexington, Virginia?
+
+    Lexington, Virginia has a humid subtropical climate, with hot summers and mild winters. The average monthly temperatures range from 34.9°F (1.6°C) in January to 75.2°F (24.0°C) in July.
+
+    Can you provide more information on the city's demographics?
+
+    According to the U.S. Census Bureau (2020), the population of Lexington, Virginia is predominantly white (82.17%), followed by African Americans (6.20%). The median income for a household is $28,982, and the per capita income is $16,497.
+
+    Are there any notable landmarks or attractions in Lexington, Virginia?
+
+    Yes, Lexington, Virginia is home to several historic sites, including the Stonewall Jackson House, University Chapel, George C. Marshall Library, Virginia Military Institute Museum, and Museum of Military Memorabilia. The city also hosts a number of festivals and events throughout the year.
+
+    I hope this information helps! Let me know if you have any further questions.
+
+
+Ollama Run Statistics:
+    Model Name:        llama3
+    Context Window:    16000 bytes
+    Total Duration:    4487.75 seconds
+    Prompt Eval Count: 5989 tokens
+    Eval Count:        331 tokens
+    Eval Duration:     4276.15 seconds
+    Tokens per Second: 0.08
+
+robin@Robins-Mac-mini 2024-10-01-websearch-Yes (main)#
