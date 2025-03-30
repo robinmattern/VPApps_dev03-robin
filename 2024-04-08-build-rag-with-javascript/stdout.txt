@@ -1,0 +1,10 @@
+NAME                   ID              SIZE      MODIFIED     
+qwen2-robin3:latest    7b979599a914    352 MB    2 weeks ago     
+qwen2-robin2:latest    1b52a71c305f    352 MB    2 weeks ago     
+qwen2-robin:latest     896059efd6f3    352 MB    2 weeks ago     
+qwen2:7b               dd314f039b9d    4.4 GB    6 weeks ago     
+granite3-dense:2b      5c2e6f3112f4    1.6 GB    3 months ago    
+granite3-dense:8b      199456d876ee    4.9 GB    3 months ago    
+llama3.1:latest        42182419e950    4.7 GB    6 months ago    
+gemma2:2b              8ccf136fdd52    1.6 GB    6 months ago    
+qwen2:0.5b             6f48b936a09f    352 MB    6 months ago    
