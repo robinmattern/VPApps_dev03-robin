@@ -5,12 +5,27 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "Launch Program",
+            "name": "Debug JavaScript",
             "program": "${file}",
             "request": "launch",
-            "skipFiles": [
-                "<node_internals>/**"    
-            ],
+            "skipFiles": [ "<node_internals>/**" ],
+            "runtimeExecutable": "node",
+            "type": "node"
+        },
+        {
+            "name": "Debug TypeScript",
+            "program": "${file}",
+            "request": "launch",
+            "skipFiles": [ "<node_internals>/**" ],
+            "runtimeExecutable": "node",
+            "preLaunchTask": "tsc: build - 2024-03-11-embeddings/bunjs/tsconfig.json",
+            "type": "node"
+        },
+        {
+            "name": "Debug TypeScript on Bruce's Mac",
+            "program": "${file}",
+            "request": "launch",
+            "skipFiles": [ "<node_internals>/**" ],
             "runtimeExecutable": "/Users/macstudio/.nvs/node/23.10.0/arm64/bin/node",
             "preLaunchTask": "tsc: build - tsconfig.json",
             "type": "node"

@@ -4,3 +4,6 @@ node_modules
 *.bin
 *.sqlite3
 chroma.log
+
+*_v[0-9]*
+*_t[0-9]*
