@@ -1,0 +1,11 @@
+{
+  "name": "altools",
+  "author": "Robin Mattern",
+  "license": "ISC",
+  "dependencies": {
+    "@mozilla/readability": "^0.6.0",
+    "dotenv": "^16.4.7",
+    "inquirer": "^12.5.0",
+    "jsdom": "^26.0.0"
+  }
+}
