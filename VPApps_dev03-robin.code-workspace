@@ -1,0 +1,16 @@
+{
+    "folders": [
+        {
+            "name": "._",
+            "path": "../._"
+        },
+        {
+            "name": "VPApps_dev03-robin",
+            "path": "."
+        }
+    ],
+    "settings": {
+        "liveServer.settings.multiRootWorkspaceName": "VPApps_dev03-robin",
+        "liveServer.settings.port": 5501
+    }
+}
