@@ -26,7 +26,7 @@
 #.(50330.02   3/30/25 RAM  4:15p| Add Documentation 
 #.(50330.03   3/30/25 RAM  7:00p| Replace createUserInput with ask4Text
 #.(50330.06   3/30/25 XAI  8:15p| Write and use wrap 
-#.(50331.01   3/31/25 XAI  7:55a| Add first URL as "document"
+#.(50331.01   3/31/25 XAI  7:55a| Add first URL as "document"  
 #.(50330.06a  3/31/25 RAM  8:15a| Add indent to wrap
 #.(50331.02   3/31/25 RAM 10:00a| Save log to docs
 #.(50331.04   3/31/25 RAM  3:00p| Write and use getVars
