@@ -65,6 +65,7 @@ import { Stats } from "fs";
      global.aAppDir          =  aAppDir
    global.__basedir2         =  FRT.path( aAppPath )
             FRT.__basedir2   =  FRT.path( aAppPath )
+       var  bIsInVSCode      =  FRT.isNotCalled( import.meta.url )                      //.(50331.07.1)
 
 // Display configuration if verbose output is enabled
 // --  ---  --------  =  --  =  ------------------------------------------------------  #  
@@ -99,9 +100,10 @@ import { Stats } from "fs";
        var  pVars            =  MWT.getVars( FRT.__dirname )                                                // .(50331.04.3 RAM Get .env vars Beg)
             aModel           =  pVars.MODEL       ||  aModel
             nCTX_Size        = (pVars.CTX_SIZE    ||  nCTX_Size) * 1
-       var  aTemperature     = (pVars.TEMPERATURE || .07) * 1
+       var  nTemperature     = (pVars.TEMPERATURE || .07) * 1
        var  aSearch          =  pVars.SEARCH      || "Lexington Va"
        var  aAIPrompt        =  pVars.QUERY       || "What are the city's restaurants?"
+       var  aSysPrompt       =  pVars.SYS_PROMPT                                                            // .(50331.09.1 
 
        var  mArgs            =  process.argv.slice(2)
        var  aModel           =  mArgs[0] ? mArgs[0] : aModel
@@ -115,27 +117,33 @@ import { Stats } from "fs";
 // Setup logfile
 // --  ---  --------  =  --  =  ------------------------------------------------------  #  
 
-       var  aServer          = (pVars.THE_SERVER   || '').slice( 0, 11 ), aSvr = aServer.slice(0,5)         // .(50331.0)
+       var  aServer          = (pVars.THE_SERVER   || '').slice( 0, 11 ), aSvr = aServer.slice(0,5)         // .(50331.04.x)
        var  bPrtSources      =  pVars.SHOW_SOURCES ||   0         // Whether to print source content
        var  nWdt             =  pVars.WRAP_WIDTH   || 145 
        var  nLog             =  pVars.TO_SCREEN_OR_FILE || 1                                                // .(50331.04.4)
 
+       var  aRespId          = `${aAppDir.slice(0,3)}_${pVars.SESSION_ID}.${pVars.NEXT_POST}`               // .(50331.08.3 RAM Get RespId) 
+       var  aNextPost        = `${ 1 + pVars.NEXT_POST * 1 }`.padStart( 2, "0" )                            // .(50331.08.4 RAM Set Next_Post) 
+                                FRT.setEnv( "NEXT_POST", aNextPost, FRT.__dirname)                          // .(50331.08.5) 
+
 //     var  aLogFile         =      `./${aAppDir}/${aAppDir.slice(0,3)}_t001.01.4.${aTS}_Response.txt`      //#.(50331.02.5)
-       var  aLogFile         = `./docs/${aAppDir}/${aAppDir.slice(0,3)}_t001.01.4.${aTS}_Response.txt`      // .(50331.02.5 RAM put it in /docs)
+       var  aLogFile         = `./docs/${aAppDir}/${aRespId}.4.${aTS}_Response.txt`                         // .(50331.08.2).(50331.02.5 RAM put it in /docs)
                                 FRT.setSay( nLog, aLogFile )                                                // .(50331.04.5 RAM nLog was 3)
 //     var  aStatsFile       =  FRT.join( __basedir, `./docs/${aAppDir}/${aAppDir.slice(0,3)}_Stats.csv` )   
        var  aStatsFile       = `${aAppDir.slice(0,3)}_Stats_u${aTS.slice(0,5)}-${aSvr}.csv`                 // .(50331.04b.1 RAM Update StatsFile name)
        var  aStatsFile       =  FRT.join( __basedir, `./docs/${aAppDir}/${aStatsFile}` )                    // .(50331.04b.2)
 
 // Configure prompt and Ollama parameters
-       var  aSysPrompt       = "Summarize the information and provide an answer. Use only the information in the following articles to answer the question:"
-       var  ollamaUrl        = 'http://localhost:11434/api/generate' // Adjust if Ollama runs elsewhere
+//     var  aSysPrompt       = "Summarize the information and provide an answer. Use only the information in the following articles to answer the question:"
+       var  ollamaUrl        =  pVars.PLATFORM_URL // 'http://localhost:11434/api/generate'                 // .(50331.09.2 Adjust if Ollama runs elsewhere)
 
        var  pParms           = 
              {  model        :  aModel
              ,  prompt       : `{Query}.${aSysPrompt} {Text}`
              ,  stream       :  true
-             ,  options      :{ num_ctx: nCTX_Size }
+             ,  options      :{ num_ctx: nCTX_Size 
+                              , temperature: nTemperature
+                                }
                 }
 // --  ---  --------  =  --  =  ------------------------------------------------------  #  
 
@@ -146,9 +154,9 @@ import { Stats } from "fs";
   async  function  main( ) {     
        let  searchPrompt, aiPrompt; // Prompt user for search and AI queries
   
-        if (bDebug == true) {
-            searchPrompt     = aSearch       // "Lexington Va";                                                                              // .(50331.04.6)
-            aiPrompt         = aAIPrompt     // "The city's restaurants";                                                                    // .(50331.04.7)
+        if (bDebug == true || bIsInVSCode ) {                                                                                             //.(50331.07.2)
+            searchPrompt     =  aSearch       // "Lexington Va";                                                                             // .(50331.04.6)
+            aiPrompt         =  aAIPrompt     // "The city's restaurants";                                                                   // .(50331.04.7)
         } else {
             usrMsg( "" )
 //          searchPrompt     =( await MWT.ask4Text( "Enter your search prompt (e.g., '${aSearch)Lexington VA'): " ) ) || "Lexington Va";     //#.(50330.03.6).(50331.04.8)
@@ -267,13 +275,14 @@ async function answerQuery( query, texts, document, webSearch ) {               
   
         if (bPrtSources == 1) {
             usrMsg( `\n  Docs: \n${ MWT.wrap( aSources, nWdt , 2, 4 ) }`)               // .(50330.06a.6 RAM Add indent).(50331.01.3 RAM Was Texts).(50330.06.2 RAM Use Wrap)
-            usrMsg(   `  Docs:   End of Sources`)                                       // .(50331.01.4)
+            usrMsg(   `  Docs: End of Sources`)                                       // .(50331.01.4)
         } else {
             usrMsg(   `  Docs:   ${texts.length} Sources,${ `${aSources.length}`.padStart(6) } bytes from ${document}`)        // .(50331b.01.5).(50331.01.5 RAM Add documents)
             }
   
-            usrMsg(   `  Query:  ${query}` )
-            usrMsg(   `  Prompt:${ pParms.prompt.replace( /: {/, ":{" ).replace( /{Text}/, "{Docs}" ) }`)
+            usrMsg(   `  Query:     "${query}"` )
+            usrMsg(   `  SysPrompt: "${ pParms.prompt.replace( /{Text}/, "" ).replace( /{Query}\./, "" ) }"` )
+            usrMsg(   `  Prompt:    "{Query}. {SysPrompt}, {Docs}"` ) 
 
             pParms.prompt    =  pParms.prompt.replace( /{Query}/, query )
             pParms.prompt    =  pParms.prompt.replace( /{Text}/,  texts.join("\n\n" ))
@@ -288,18 +297,18 @@ async function answerQuery( query, texts, document, webSearch ) {               
             aResult          =  MWT.wrap( aResult, nWdt, 4 )                            // .(50330.06a.7).(50330.06.3)
             usrMsg( aResult )                                                           // .(50330.06a.7).(50330.06.3)
             }
-            usrMsg( "\n----------------------------------------------------------------------------------------------\n ")
-            usrMsg(             MWT.fmtStats(pStats, pParms).join("\n"))
-            usrMsg( "\n---------------------------------------------------------------------------------------------- ")
-
             pStats.query     =  query                                                   // .(50331.03.4 Beg)
             pStats.url       =  document
             pStats.websearch =  webSearch                                               // .(50330.04c.3 RAM Add)
             pStats.docs      = `${texts.length} Sources, ${aSources.length} bytes`
-            pParms.logfile   =  aLogFile                                                // .(50331.05.4 RAM Add logfile) 
+            pParms.logfile   = `${FRT.__baseDir}/${aLogFile}`                           // .(50331.05.6 RAM Add logfile) 
             pParms.temp      =  aTemperature                                            
 
-      var [ pSt_JSON, mCSV ] =  MWT.savStats(   pStats, pParms )
+            usrMsg( "\n----------------------------------------------------------------------------------------------\n ")
+            usrMsg(             MWT.fmtStats(   pStats, pParms ).join("\n"))
+            usrMsg( "\n---------------------------------------------------------------------------------------------- ")
+
+   var [ pStats_JSON, mCSV ] =  MWT.savStats(   pStats, pParms )
        var  bNotExists       =  FRT.checkFileSync( aStatsFile ).exists == false                         
         if (bNotExists) {       FRT.writeFile(  aStatsFile, `${mCSV[0]}\n` ) }                  
                                 FRT.appendFile( aStatsFile, `${mCSV[1]}\n` )            // .(50331.03.4 RAM Use it End)

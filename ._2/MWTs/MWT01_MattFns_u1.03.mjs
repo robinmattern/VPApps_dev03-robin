@@ -35,7 +35,7 @@
 #.(50331.04   3/31/25 RAM  1:50p| Write and use getVars  
 #.(50330.04b  3/31/25 RAM  4:45p| Add more server info 
 #.(50330.04c  3/31/25 RAM  7:35p| Add web searchPrompt
-#.(50331.05   3/31/25 RAM  9:00p| Add ReponseFile to Stats and CSV
+#.(50331.05   3/31/25 RAM  9:00p| Add ResponseFile to Stats and CSV
 
 ##PRGM     +====================+===============================================+
 ##ID 69.600. Main0              |
@@ -180,6 +180,7 @@ function  fmtResults(results) {
  */
   function  fmtStats( stats, parms ) {
 //    var [ aServer, aCPU_GPU_RAM ] = getServerInfo();                                  //#.(50330.04.5 RAM Use it).(50330.04b.1)
+            parms.resp_id  = FRT.getAppName( parms.logfile ).slice(0,24)                // .(50331.05.1) 
       var [ aServer, aCPU_GPU, aRAM, aPC_Model, aOS ]  = getServerInfo();               // .(50330.04b.1)
        var  statsLines = [];
             statsLines.push(`Ollama Run Statistics:`);
@@ -188,9 +189,10 @@ function  fmtResults(results) {
             statsLines.push(`    Operating System:  ${ aOS }` )                         // .(50330.04b.2) 
             statsLines.push(`    CPU/GPU/RAM:       ${ aCPU_GPU }, ${aRAM}` )           // .(50330.04b.3).(50330.04.7)
             statsLines.push(`    Computer:          ${ aPC_Model }` )                   // .(50330.04b.4) 
-            statsLines.push(`    Session.Post ID:   ${ parms.logfile.slice(0,24) }` );  // .(50331.05.1) 
+            statsLines.push(`    Session.Post ID:   ${ parms.resp_id }` );              // .(50331.05.2) 
             statsLines.push(`    Model Name:        ${ parms.model }` );
-            statsLines.push(`    Context Window:    ${ parms.options.num_ctx  } bytes`);
+            statsLines.push(`    Temperature:       ${ parms.temp }` );                 // .(50331.05.3) 
+            statsLines.push(`    Context Window:    ${ parms.options.num_ctx   } bytes`);
             statsLines.push(`    Total Duration:    ${(stats.total_duration / 1e9).toFixed(2) } seconds`);
             statsLines.push(`    Eval Count:        ${ stats.eval_count        } tokens`);
             statsLines.push(`    Eval Duration:     ${(stats.eval_duration  / 1e9).toFixed(2) } seconds`);
@@ -222,7 +224,7 @@ function  fmtResults(results) {
   function  savStats( stats, parms ) {                                                  // .(50331.03.1 RAM Write savStats)
       var [ aServer, aCPU_GPU, aRAM, aPC_Model, aOS ]  = getServerInfo();               // .(50330.04b.6)
        var  pStats  = {};
-            pStats.RespId           =  parms.logfile.slice(0,11)                        // .(50331.05.2) 
+            pStats.RespId           =  parms.resp_id(0,11)                              // .(50331.05.4) 
             pStats.ModelName        =  parms.model
             pStats.ContextSize      =  parms.options.num_ctx 
             pStats.Temperature      =  parms.temp 
@@ -240,7 +242,7 @@ function  fmtResults(results) {
             pStats.OS               =  aOS                                               
             pStats.Computer         =  aPC_Model                                        // .(50330.04b.7 End)
             pStats.Server           =  aServer
-            pStats.ResponseFile     =  parms.logfile                                    // .(50331.05.3) 
+            pStats.ResponseFile     =  `file:///${parms.logfile}`                       // .(50331.05.5) 
        var  mStats                  =  Object.entries( pStats ).map( pStat => pStat[1] )            
        var  aCSV                    = `"${ mStats.join( '","' ) }"`
 //     var  aFlds                   = `Model,URL,Docs,Query,Context,Duration,PromptEvalCount,EvalCount,EvalDuration,TokensPerSecond,Server,CPU_GPU_RAM`
