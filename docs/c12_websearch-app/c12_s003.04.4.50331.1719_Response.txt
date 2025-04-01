@@ -1,0 +1,42 @@
+
+
+  Search Prompt: "Lexington VA"
+  AI Prompt:     "How is the tourism?"
+  Fetching from: https://api.duckduckgo.com/?q=Lexington%20VA&format=json
+
+ Empty response from DuckDuckGo.
+    Fetching https://www.lexingtonvirginia.com/
+
+Compined Prompt for Model gemma2:2b:
+---------------------------------------------------------------------------------------------- 
+  Docs:   1 Sources, 1849 bytes from https://www.lexingtonvirginia.com/
+  Query:  How is the tourism?
+  Prompt:{Query}.Summarize the information and provide an answer. Use only the information in the following articles to answer the question:{Docs}
+
+Ollama Model Response:
+---------------------------------------------------------------------------------------------- 
+The provided text highlights events and activities happening in Lexington, Virginia, over the course of the coming weeks. These include weekly
+    farmers markets, special growler fill days at local breweries and wineries, a "Tick Awareness Week" event focused on tick safety, complimentary
+    wine tasting at Lexington Mercantile,  complimentary wine tastings at Purveyors on Main, and a monthly "First Friday Art Walk." There's also a
+    senior recital by Matt Flynn taking place in the Wilson Concert Hall. 
+
+In summary, the tourism events in Lexington, Virginia, appear to be focused on local culture, art, community events, and outdoor activities. 
+
+
+----------------------------------------------------------------------------------------------
+ 
+Ollama Run Statistics:
+--------------------------------------------
+    Server: rm231-os15_Robins-Mac-mini (10.0.0.37)
+    Operating System:  Sonoma v15.2
+    CPU/GPU/RAM:       Apple M1, 8 GB
+    Computer:          Apple Mac Mini (2022)
+    Model Name:        gemma2:2b
+    Context Window:    16000 bytes
+    Total Duration:    10.21 seconds
+    Prompt Eval Count: 911 tokens
+    Eval Count:        130 tokens
+    Eval Duration:     5.08 seconds
+    Tokens per Second: 25.59 seconds
+
+---------------------------------------------------------------------------------------------- 

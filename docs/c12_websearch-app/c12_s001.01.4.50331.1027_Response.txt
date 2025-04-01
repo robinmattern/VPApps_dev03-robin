@@ -1,0 +1,560 @@
+
+  Search Prompt: "Lexington Va"
+  AI Prompt:     "Tell me about the city's restaurants"
+  Fetching from: https://api.duckduckgo.com/?q=Lexington%20Va&format=json
+---------------------------------------------------------------------------------------------- 
+Response from DuckDuckGo:
+
+  API Response:
+
+  "AbstractURL": "https://en.wikipedia.org/wiki/Lexington%2C_Virginia",
+  "Results": "
+     http://lexingtonva.gov/
+       Official site
+     https://www.lexingtonva.gov/
+       Official site - Lexington, Virginia",
+  "RelatedTopics": "
+     https://duckduckgo.com/c/Lexington%2C_Virginia
+       Lexington, Virginia Category
+     https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+       National Register of Historic Places listings in Lexington, Virginia - This is a list of the National Register of Historic Places listings in Lexington, Virginia. This is intended to be a complete list of the properties and districts on the National Register of Historic Places in the independent city of Lexington, Virginia, United States.
+     https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+       Rockbridge County, Virginia
+     https://duckduckgo.com/c/Cities_in_Virginia
+       Cities in Virginia
+     https://duckduckgo.com/c/Flag_controversies_in_the_United_States
+       Flag controversies in the United States
+     https://duckduckgo.com/c/County_seats_in_Virginia
+       County seats in Virginia"
+
+  Found 5 URLs:
+    Fetching https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+    Fetching http://lexingtonva.gov/
+    Fetching https://www.lexingtonva.gov/
+    Fetching https://duckduckgo.com/c/Lexington%2C_Virginia
+    Fetching https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+
+Compined Prompt for Model qwen2:0.5b:
+---------------------------------------------------------------------------------------------- 
+
+  Docs: 
+1.Source:https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+  Lexington, VirginiaIndependent cityMain Street, Lexington, VirginiaLexington in the Commonwealth of
+    VirginiaLexingtonLexingtonLexingtonCoordinates: 37°47′2″N 79°26′34″W﻿ / ﻿37.78389°N 79.44278°W[1]CountryUnited StatesStateVirginiaCountyNone
+    (independent city)Government • MayorFrank W Friedman • City managerJim Halasz • Commissioner of RevenueKaren T. Roundy • TreasurerPatricia
+    DeLaney • City AttorneyJeremy Carroll, EsquireArea[2] • Total2.52 sq mi (6.54 km2) • Land2.50 sq mi (6.47 km2) • Water0.03 sq mi
+    (0.07 km2)Elevation1,063 ft (324 m)Population (2020) • Total7,320 • Density2,900/sq mi (1,100/km2)Time zoneUTC−5 (Eastern (EST)) • Summer
+    (DST)UTC−4 (EDT)ZIP Code24450Area code540FIPS code51-45512[3]GNIS feature ID1498506[1]WebsiteLexington, Virginia
+  Lexington is an independent city in the Commonwealth of Virginia, United States. At the 2020 census, the population was 7,320.[4] It is the county
+    seat of Rockbridge County, although the two are separate jurisdictions, and is combined with it for statistical purposes by the Bureau of Economic
+    Analysis.[5] Lexington is within the Shenandoah Valley about 57 miles (92 km) east of the West Virginia border and is about 50 miles (80 km) north
+    of Roanoke, Virginia. First settled in 1778, Lexington is best known as the home of the Virginia Military Institute and Washington and Lee
+    University.
+  Lexington was named in 1778. It was the first of what would be many American places named after Lexington, Massachusetts, known for being the
+    place at which the first shot was fired in the American Revolution.[6]
+  The Union General David Hunter led a raid on Virginia Military Institute during the American Civil War. Robert E. Lee and Thomas "Stonewall"
+    Jackson are buried in the city. It is the site of the only house Jackson ever owned, now open to the public as a museum.[7] Cyrus McCormick
+    invented the horse-drawn mechanical reaper at his family's farm in Rockbridge County,[8] and a statue of McCormick is located on the Washington
+    and Lee University campus.[9] McCormick Farm is now owned by Virginia Tech and is a satellite agricultural research center.[10]
+  According to the U.S. Census Bureau, the city has a total area of 2.5 square miles (6.5 km2), virtually all of which is land.[11] The Maury River,
+    a tributary of the James River, forms the city's northeastern boundary.
+  The climate in this area is characterized by hot, humid summers and generally mild to cool winters.  According to the Köppen climate
+    classification system, Lexington has a humid subtropical climate, similar to Northern Italy, abbreviated "Cfa" on climate maps.[12] Average
+    monthly temperatures range from 34.9 °F in January to 75.2 °F in July.[13] The hardiness zone is 7a.[14]
+  Climate data for Lexington, Virginia (1991–2020 normals, extremes 1889–present)
+  Month
+  Jan
+  Feb
+  Mar
+  Apr
+  May
+  Jun
+  Jul
+  Aug
+  Sep
+  Oct
+  Nov
+  Dec
+  Year
+  Record high °F (°C)
+  84(29)
+  84(29)
+  89(32)
+  95(35)
+  97(36)
+  100(38)
+  105(41)
+  103(39)
+  100(38)
+  96(36)
+  87(31)
+  79(26)
+  105(41)
+  Mean daily maximum °F (°C)
+  45.2(7.3)
+  49.3(9.6)
+  57.4(14.1)
+  68.4(20.2)
+  75.7(24.3)
+  83.1(28.4)
+  86.6(30.3)
+  85.4(29.7)
+  79.1(26.2)
+  69.1(20.6)
+  57.8(14.3)
+  48.3(9.1)
+  67.1(19.5)
+  Daily mean °F (°C)
+  34.2(1.2)
+  37.0(2.8)
+  44.3(6.8)
+  54.4(12.4)
+  63.1(17.3)
+  71.2(21.8)
+  75.3(24.1)
+  74.0(23.3)
+  67.3(19.6)
+  56.0(13.3)
+  44.8(7.1)
+  37.3(2.9)
+  54.9(12.7)
+  Mean daily minimum °F (°C)
+  23.3(−4.8)
+  24.8(−4.0)
+  31.2(−0.4)
+  40.4(4.7)
+  50.5(10.3)
+  59.4(15.2)
+  64.0(17.8)
+  62.6(17.0)
+  55.5(13.1)
+  42.9(6.1)
+  31.9(−0.1)
+  26.4(−3.1)
+  42.7(5.9)
+  Record low °F (°C)
+  −16(−27)
+  −16(−27)
+  −4(−20)
+  14(−10)
+  26(−3)
+  35(2)
+  44(7)
+  39(4)
+  30(−1)
+  18(−8)
+  1(−17)
+  −10(−23)
+  −16(−27)
+  Average precipitation inches (mm)
+  3.15(80)
+  2.76(70)
+  3.52(89)
+  3.71(94)
+  4.11(104)
+  4.80(122)
+  4.10(104)
+  3.31(84)
+  3.67(93)
+  3.06(78)
+  3.23(82)
+  3.47(88)
+  42.89(1,089)
+  Average snowfall inches (cm)
+  2.9(7.4)
+  4.7(12)
+  2.3(5.8)
+  0.1(0.25)
+  0.0(0.0)
+  0.0(0.0)
+  0.0(0.0)
+  0.0(0.0)
+  0.0(0.0)
+  0.0(0.0)
+  0.1(0.25)
+  3.4(8.6)
+  13.5(34)
+  Average precipitation days (≥ 0.01 in)
+  8.5
+  8.4
+  9.9
+  11.1
+  12.2
+  11.9
+  11.2
+  11.0
+  8.8
+  7.8
+  7.8
+  9.9
+  118.5
+  Average snowy days (≥ 0.1 in)
+  2.0
+  1.8
+  1.1
+  0.1
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.0
+  0.1
+  1.7
+  6.8
+  Source: NOAA[15][16]
+  Historical population
+  CensusPop.Note%±
+  
+    18501,743—18602,13522.5%18702,87334.6%18802,771−3.6%18903,05910.4%19003,2034.7%19102,931−8.5%19202,870−2.1%19303,75230.7%19403,9144.3%19505,97652.7%19607,53726.1%19707,5970.8%19807,292−4.0%19906,959−4.6%20006,867−1.3%20107,0422.5%20207,3203.9%U.S.
+    Decennial Census[17]1790–1960[18] 1900–1990[19]1990–2000[20] 2010[21]2020[22]
+  Lexington city, Virginia - Demographic Profile (NH = Non-Hispanic)
+  Race / Ethnicity
+  Pop 2010[21]
+  Pop 2020[23]
+  % 2010
+  % 2020
+  White alone (NH)
+  5,807
+  6,015
+  82.46%
+  82.17%
+  Black or African American alone (NH)
+  668
+  454
+  9.49%
+  6.20%
+  Native American or Alaska Native alone (NH)
+  8
+  8
+  0.11%
+  0.11%
+  Asian alone (NH)
+  153
+  281
+  2.17%
+  3.84%
+  Pacific Islander alone (NH)
+  4
+  0
+  0.06%
+  0.00%
+  Some Other Race alone (NH)
+  12
+  23
+  0.17%
+  0.31%
+  Mixed Race/Multi-Racial (NH)
+  119
+  204
+  1.69%
+  2.79%
+  Hispanic or Latino (any race)
+  271
+  335
+  3.85%
+  4.58%
+  Total
+  7,042
+  7,320
+  100.00%
+  100.00%
+  Note: the US Census treats Hispanic/Latino as an ethnic category. This table excludes Latinos from the racial categories and assigns them to a
+    separate category. Hispanics/Latinos can be of any race.
+  As of the census[24] of 2000, there were 6,867 people, 2,232 households, and 1,080 families residing in the city. The population density was
+    2,753.8 per square mile (,064.8/km2). The racial makeup was 86.01% White, 10.38% African American, 0.26% Native American, 1.92% Asian, 0.01%
+    Pacific Islander and 0.48% from other races, and 0.93% from two or more races. Hispanic or Latino of any race were 4.1% of the population.
+  There were 2,232 households, of which 18.3% had children under the age of 18 living with them, 36.9% were married couples living together, 8.8%
+    had a female householder with no husband present, and 51.6% were non-families. 41.0% of all households were made up of individuals, and 17.7% had
+    someone living alone who was 65 years of age or older. The average household size was 2.06 and the average family size was 2.76.
+  In the city, the population was spread out, with 11.0% under the age of 18, 41.4% from 18 to 24, 14.5% from 25 to 44, 16.7% from 45 to 64, and
+    16.4% who were 65 years of age or older. The median age was 23 years. For every 100 females, there were 123.2 males. For every 100 females aged 18
+    and over, there were 127.2 males.
+  The median income for a household in the city was $28,982, and the median income for a family was $58,529. Males had a median income of $35,288
+    versus $26,094 for females. The per capita income was $16,497. About 8.4% of families and 21.6% of the population were below the poverty line,
+    including 12.9% of those under age 18 and 12.0% of those age 65 or over.
+  View of the First Baptist Church along Main Street in the Lexington Historic District
+  Lexington's primary economic activities stem from higher education and tourism. With its various connections to the Civil War, Lexington attracts
+    visitors from around the country. Places of interest in Lexington include the Stonewall Jackson House, University Chapel, the George C. Marshall
+    Library, Virginia Military Institute Museum, Museum of Military Memorabilia, and the downtown historic district. Hull's Drive In theater attracts
+    visitors to the area and was the first community-owned, non-profit drive-in in the U.S. The non-profit Virginia Horse Center is a significant
+    regional equestrian event facility.
+  Lexington also contains a host of small retail businesses, bed and breakfast inns, and restaurants catering to a unique mixture of local, tourist,
+    and collegiate clientele. The historic R. E. Lee Hotel, built in the 1920s, underwent extensive renovation and re-opened its doors late 2014.
+  Lexington High School, designed by architect Charles M. Robinson and constructed in 1908, was typical of the modern public schools that cities
+    built during the Progressive Era.
+  University Chapel
+  George C. Marshall Foundation
+  Robert E. Lee grave site, found in Lee Chapel on the W&L campus.
+  Traveller (Lee's horse) grave site, found along a walkway just outside Lee Chapel.
+  Thomas "Stonewall" Jackson grave site, found at Oak Grove Cemetery
+  Stonewall Jackson House, residence of Confederate general Thomas "Stonewall" Jackson
+  Sam Houston place of birth (nearby)
+  Cyrus McCormick Farm, birthplace and museum (nearby)
+  Kappa Alpha Order international headquarters
+  Omicron Delta Kappa national headquarters
+  Sigma Nu international headquarters
+  Chessie Nature Trail follows the former C&O railway bed along the Maury River
+  Natural Bridge (nearby)
+  Hull's Drive In, the first non-profit drive-in theater in the U.S. (nearby)
+  Gems of the Rockbridge geocaching trail
+  Located near Lexington are a number of properties listed on the National Register of Historic Places, including:[25][26] Anderson Hollow
+    Archaeological District, Cedar Hill Church and Cemeteries, Chapel Hill, Church Hill, Clifton, Hamilton Schoolhouse, Liberty Hall Site, Lylburn
+    Downing School, Maple Hall, John Moore House, Mountain View Farm, Margaret E. Poague House, Springdale, Stone House, Sunnyside, Tankersley Tavern,
+    Thorn Hill, Timber Ridge Presbyterian Church, and Willson House.
+  Lexington Carriage Company
+  Position
+  Official
+  Mayor
+  Frank Friedman
+  Councilwoman
+  Marylin Alexander
+  Councilman
+  Charles Aligood
+  Councilman
+  Nicolas Betts
+  Councilman
+  David Sigler
+  Councilman
+  Charles Smith
+  Councilwoman
+  Leslie Straughan
+  The News-Gazette is the weekly community paper; it also produces a free shopper known as The Weekender. The now-defunct The Rockbridge Weekly,
+    noted for printing police and other local crime reports, was bought by The News-Gazette in June 2012. The Rockbridge Advocate is a monthly news
+    magazine with the motto "Independent as a hog on ice". The Ring-tum Phi, student newspaper of W&L, has been published since 1897 (with a
+    suspension for World War II).[28]
+  Lexington is the city of license for radio stations WIQR (88.7 FM), WMRL (89.9 FM), and WLUR (91.5 FM)[29] on W&L campus.
+  Lexington is located at the intersection of historic U.S. Route 11 and U.S. Route 60 and more modern highways, Interstate 64 and Interstate 81.
+    RADAR Transit operates the Maury Express, which provides local bus service to Lexington and Buena Vista.[30] The Virginia Breeze provides
+    intercity bus service between Blacksburg and Washington, D.C., with a stop in Lexington.[31]
+  The 1938 movie, Brother Rat, which starred Ronald Reagan, was shot in Lexington. After the release, Reagan was made an honorary VMI cadet. The
+    1958 Mardi Gras starred Pat Boone as a VMI cadet appearing with actress Christine Carère. Sommersby from 1993 starred Richard Gere, Bill Pullman,
+    James Earl Jones, and Jodie Foster. Foreign Student, released in 1994, was based on a novel of college life by former W&L student Phillipe Labro
+    with related scenes made in town.[32] In Fall 2004, the director Steven Spielberg and Tom Cruise filmed scenes for War of the Worlds here, with
+    Dakota Fanning and Tim Robbins. In June 2013, filming took place for a movie titled Field of Lost Shoes about the Battle of New Market starring
+    Luke Benward and Lauren Holly.
+  Filming for parts of several Civil War films also took place in Lexington, including the documentary Lee Beyond the Battles and Gods and Generals.
+  In 2011, the city erupted in controversy after the City Council passed an ordinance to ban the flying of flags other than the United States flag,
+    the Virginia Flag, and an as-yet-undesigned city flag on city light poles. Various flags of the Confederacy had previously been flown on city
+    light poles to commemorate the Virginia holiday, Lee–Jackson Day, which is observed on the Friday before Martin Luther King, Jr. Day.[33] About
+    300 Confederate flag supporters, including members of the Sons of Confederate Veterans, rallied before the City Council meeting,[34] and after the
+    vote the Sons of Confederate Veterans vowed to challenge the new local ordinance in court.[33] Previously, flags such as the Washington and Lee
+    University and Virginia Military Institute flags had also been flown on city light poles, but the practice is now discontinued due to the city's
+    ordinance.[citation needed]
+  In 2014, a large Confederate battle flag and a number of related state flags were removed from Lee Chapel at Washington and Lee University. The
+    flags were moved to a rotating display at the Lee Chapel Museum.[35][36]
+  Red Hen restaurant controversy[edit]
+  The Red Hen restaurant was the site of the June 22, 2018, precipitating event for the Red Hen restaurant controversy in which a restaurant
+    co-owner asked White House Press Secretary Sarah Huckabee Sanders to leave the restaurant by citing Huckabee Sanders' role in the Trump
+    administration.[37] The incident sparked national controversy.[37]
+  William H. Armstrong, children's author and educator best known for his 1969 novel Sounder, which won the Newbery Medal.
+  Baroness (band), American heavy metal band whose early members grew up together in Lexington.
+  Lena Northern Buckner, social worker
+  Howard Drew, competitor in the 1912 Summer Olympics.[38]
+  Kelly Evans, journalist and co-presenter for CNBC.
+  Hilary Hahn, classical violinist.[39]
+  Larry Keel, bandleader and musician.
+  John Letcher, 34th Governor of Virginia.[40]
+  William Lindsay, U.S. Senator from Kentucky.[41]
+  William A. MacCorkle, ninth Governor of West Virginia.[42]
+  Sally Mann, photographer.[43]
+  Gary W. Martini, posthumously awarded the Medal of Honor for his actions in the Vietnam War.[44]
+  William G. McDowell, Episcopal prelate who served as the fifth Bishop of Alabama.
+  Robert Paxton, political scientist and historian.[45]
+  William N. Pendleton, Confederate general, longtime chief artilleryman for Robert E. Lee.
+  John Thomas Lewis Preston, founder of Virginia Military Institute.[46]
+  Pat Robertson, founder and chairman of Christian Broadcasting Network.[47]
+  Cy Twombly, artist.[48]
+  Reginald H. Ridgely Jr., United States Marine Corps lieutenant general; born in Lexington.
+  National Register of Historic Places listings in Lexington, Virginia
+  ^ a b "Lexington". Geographic Names Information System. United States Geological Survey, United States Department of the Interior.
+  ^ "2019 U.S. Gazetteer Files". United States Census Bureau. Retrieved August 7, 2020.
+  ^ "U.S. Census website". United States Census Bureau. Retrieved January 31, 2008.
+  ^ "State & County QuickFacts". United States Census Bureau. Archived from the original on December 2, 2013. Retrieved January 6, 2014.
+  ^ "Find a County". National Association of Counties. Archived from the original on May 31, 2011. Retrieved June 7, 2011.
+  ^ Ramsay, Robert L. (1952). Our Storehouse of Missouri Place Names. University of Missouri Press. p. 16. ISBN 9780826205865.
+  ^ "Stonewall Jackson House". Virginia Military Institute. Archived from the original on April 15, 2021. Retrieved September 1, 2021.
+  ^ Wilson, Mitchell (February 12, 2021). "Cyrus McCormick". Encyclopædia Britannica. Archived from the original on September 2, 2021. Retrieved
+    September 1, 2021.
+  ^ "Cyrus McCormick Statue on the grounds of Washington & Lee University in Lexington, Virginia, 9/29/02, LC-DIG-pplot-13600-01179 (digital file
+    from LC-HS503-348)". Library of Congress. Archived from the original on September 2, 2021. Retrieved September 1, 2021.
+  ^ "About the Center". Virginia Tech. Archived from the original on September 2, 2021. Retrieved September 1, 2021.
+  ^ "US Gazetteer files: 2010, 2000, and 1990". United States Census Bureau. February 12, 2011. Retrieved April 23, 2011.
+  ^ "Lexington, Virginia Köppen Climate Classification". Weatherbase. Retrieved January 13, 2019.
+  ^ "PRISM Climate Group at Oregon State University".
+  ^ "Interactive Map | USDA Plant Hardiness Zone Map". Archived from the original on June 18, 2021. Retrieved September 18, 2020.
+  ^ 
+  "NowData – NOAA Online Weather Data". National Oceanic and Atmospheric Administration. Retrieved July 2, 2021.
+  ^ 
+  "Station: Lexington, VA". U.S. Climate Normals 2020: U.S. Monthly Climate Normals (1991–2020). National Oceanic and Atmospheric Administration.
+    Retrieved July 2, 2021.
+  ^ "U.S. Decennial Census". United States Census Bureau. Retrieved January 6, 2014.
+  ^ "Historical Census Browser". University of Virginia Library. Retrieved January 6, 2014.
+  ^ "Population of Counties by Decennial Census: 1900 to 1990". United States Census Bureau. Retrieved January 6, 2014.
+  ^ "Census 2000 PHC-T-4. Ranking Tables for Counties: 1990 and 2000" (PDF). United States Census Bureau. Archived (PDF) from the original on
+    October 9, 2022. Retrieved January 6, 2014.
+  ^ a b "P2 HISPANIC OR LATINO, AND NOT HISPANIC OR LATINO BY RACE - 2010: DEC Redistricting Data (PL 94-171) - Lexington city, Virginia". United
+    States Census Bureau.
+  ^ "U.S. Census Bureau QuickFacts: Lexington city, Virginia". United States Census Bureau. Retrieved October 21, 2021.
+  ^ "P2 HISPANIC OR LATINO, AND NOT HISPANIC OR LATINO BY RACE - 2020: DEC Redistricting Data (PL 94-171) - Lexington city, Virginia". United States
+    Census Bureau.
+  ^ "U.S. Census website". United States Census Bureau. Retrieved May 14, 2011.
+  ^ "National Register Information System". National Register of Historic Places. National Park Service. July 9, 2010.
+  ^ "National Register of Historic Places Listings". Weekly List of Actions Taken on Properties: 6/06/11 through 6/10/11. National Park Service.
+    June 17, 2011.
+  ^ Leip, David. "Dave Leip's Atlas of U.S. Presidential Elections". uselectionatlas.org. Dave Leip's Atlas of U.S. Presidential Elections.
+    Retrieved January 11, 2025.
+  ^ "Ring-tum Phi Archives". Washington and Lee University Digital Archive. June 10, 2014. Retrieved January 23, 2021.
+  ^ "Radio stations in Lexington, Virginia - Radio Lineup". www.radiolineup.com. Retrieved January 23, 2021.
+  ^ "Maury Express – RADAR – Paratransit and Senior Transportation Services, Roanoke VA". Retrieved January 20, 2020.
+  ^ "The Virginia Breeze: Bus from Blacksburg to Washington, DC". The Virginia Breeze: Bus from Blacksburg to Washington, DC | DRPT. Retrieved
+    January 20, 2020.
+  ^ "Foreign Student" – via www.imdb.com.
+  ^ a b Associated Press. "Va. city bans public Confederate flag displays". CBS News. Retrieved June 14, 2012.
+  ^ Adams, Duncan. "Rebel flags barred from Lexington poles". Roanoke Times. Archived from the original on February 1, 2013. Retrieved June 14,
+    2012.
+  ^ "Virginia university to remove Confederate flags from chapel". CNN Wire. July 9, 2014. Retrieved September 6, 2017.
+  ^ Shapiro, T. Rees (July 8, 2014). "Washington and Lee University to remove Confederate flags following protests". Washington Post. Retrieved
+    January 13, 2019.
+  ^ a b Selk, Avi; Murray, Sarah (June 25, 2018). "The owner of the Red Hen explains why she asked Sarah Huckabee Sanders to leave". The Washington
+    Post. Archived from the original on July 4, 2018.
+  ^ "Howard Drew". Sports-reference.com. Archived from the original on April 18, 2020. Retrieved March 4, 2017.
+  ^ Davidson, Justin (November 28, 1997). "Past Her Prime at 17? : Younger violinists are fast on the heels of Hilary Hahn. But she doesn't feel the
+    heat". Los Angeles Times. Retrieved March 4, 2017.
+  ^ "Virginia Governor John Letcher". National Governors Association. Retrieved March 4, 2017.
+  ^ "Lindsay, William, (1835 - 1909)". Biographical Directory of the United States Congress. Retrieved March 4, 2017.
+  ^ "West Virginia Governor William Alexander MacCorkle". National Governors Association. Retrieved March 4, 2017.
+  ^ "Sally Mann". sallymann.com. Retrieved March 4, 2017.
+  ^ "Gary Wayne Martini 1948-1967". West Virginia Division of Culture and History. Retrieved March 4, 2017.
+  ^ Evans, Martin (2001). "Robert Paxton: The Outsider". History Today.
+  ^ The National Cyclopaedia of American Biography. New York, NY: J. T. White. 1967. p. 245.
+  ^ Hill, Samuel S.; Lippy, Charles H.; Wilson, Charles Reagan (2005). Encyclopedia of Religion in the South. Mercer University. ISBN 9780865547582.
+  ^ Masters, Christopher (July 6, 2011). ""Cy" (Cyclone) Twombly, obituary". The Guardian. UK.
+  Official website
+  City of Lexington - Government Site
+  Chamber Of Commerce
+  Virginia Main Street Communities: Lexington Historic District
+  Lexington During the Civil War in Encyclopedia Virginia
+  
+  2.Source:http://lexingtonva.gov/
+  You don't have permission to access "http://www.lexingtonva.gov/" on this server.
+  Reference #18.58deda17.1743431321.a01904ad
+  https://errors.edgesuite.net/18.58deda17.1743431321.a01904ad
+  
+  3.Source:https://www.lexingtonva.gov/
+  You don't have permission to access "http://www.lexingtonva.gov/" on this server.
+  Reference #18.51deda17.1743431321.6e39bde6
+  https://errors.edgesuite.net/18.51deda17.1743431321.6e39bde6
+  
+  4.Source:https://duckduckgo.com/c/Lexington%2C_Virginia
+  DuckDuckGo
+  
+  5.Source:https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+  DuckDuckGo
+  
+  Docs:   End of Sources
+  Query:  Tell me about the city's restaurants
+  Prompt:{Query}.Summarize the information and provide an answer. Use only the information in the following articles to answer the question:{Text}
+
+Ollama Model Response:
+---------------------------------------------------------------------------------------------- 
+Lexington, Virginia is an independent city in the Commonwealth of Virginia, United States. It was founded on September 16, 1778, as the home of
+the Virginia Military Institute and Washington and Lee University.
+The city has a total area of 2.5 square miles (6.54 km²), nearly all of which is land. The Maury River, a tributary of the James River, forms the
+city's northeastern boundary.
+Lexington was named in 1778. It was the first of what would be many American places named after Lexington, Massachusetts, known for being the
+place at which the first shot was fired in the American Revolution.
+According to the U.S. Census Bureau, the city has a total area of 2.5 square miles (6.5 km²), virtually all of which is land. The Maury River, a
+tributary of the James River, forms the city's northeastern boundary.
+Lexington is within the Shenandoah Valley about 57 miles (92 km) east of the West Virginia border and is about 50 miles (80 km) north of Roanoke,
+Virginia. First settled in 1778, Lexington is best known as the home of the Virginia Military Institute and Washington and Lee University.
+Lexington city has a total population of 7320 people, nearly half of which are minority populations, particularly African Americans and
+Hispanics/Latino.
+
+The city's primary economic activities stem from higher education and tourism. With its various connections to the Civil War, Lexington attracts
+visitors from around the country. Places of interest in Lexington include the Stonewall Jackson House, University Chapel, the George C. Marshall
+Library, Virginia Military Institute Museum, Museum of Military Memorabilia, and the downtown historic district.
+Lexington also contains a host of small retail businesses, bed and breakfast inns, and restaurants catering to a unique mixture of local, tourist,
+and collegiate clientele. The city's historic R. E. Lee Hotel, built in the 1920s, underwent extensive renovation and re-opened its doors late
+2014.
+
+Lexington High School, designed by architect Charles M. Robinson and constructed in 1908, was typical of the modern public schools that cities
+built during the Progressive Era.
+University Chapel
+George C. Marshall Foundation
+Robert E. Lee grave site, found in Lee Chapel on the W&L campus.
+Traveller (Lee's horse) grave site, found at Oak Grove Cemetery
+Stonewall Jackson House, residence of Confederate general Thomas "Stonewall" Jackson
+Sam Houston place of birth (nearby)
+Cyrus McCormick Farm, birthplace and museum (nearby)
+Kappa Alpha Order international headquarters
+Omicron Delta Kappa national headquarters
+Sigma Nu international headquarters
+Chessie Nature Trail follows the former C&O railway bed along the Maury River
+Natural Bridge (nearby)
+Hull's Drive In, the first non-profit drive-in theater in the U.S. (nearby)
+Gems of the Rockbridge geocaching trail
+Located near Lexington are a number of properties listed on the National Register of Historic Places, including:[25][26] Anderson Hollow
+Archaeological District, Cedar Hill Church and Cemeteries, Chapel Hill, Church Hill, Clifton, Hamilton Schoolhouse, Liberty Hall Site, Lylburn
+Downing School, Maple Hall, John Moore House, Mountain View Farm, Margaret E. Poague House, Springdale, Stone House, Sunnyside, Tankersley Tavern,
+Thorn Hill, Timber Ridge Presbyterian Church, and Willson House.
+Lexington Carriage Company
+
+
+
+
+
+Position
+Official
+
+Mayor
+Frank Friedman
+
+Councilwoman
+Marylin Alexander
+
+Councilman
+Charles Aligood
+
+Councilman
+Nicolas Betts
+
+Councilman
+David Sigler
+
+Councilman
+Charles Smith
+
+Councilwoman
+Leslie Straughan
+
+The News-Gazette is the weekly community paper; it also produces a free shopper known as The Weekender. The now-defunct The Rockbridge Weekly,
+noted for printing police and other local crime reports, was bought by The News-Gazette in June 2012. The Rockbridge Advocate is a monthly news
+magazine with the motto "Independent as a hog on ice". The Ring-tum Phi, student newspaper of W&L, has been published since 1897 (with a
+suspension for World War II).
+Lexington is the city of license for radio stations WIQR (88.7 FM), WMRL (89.9 FM), and WLUR (91.5 FM)[29] on W&L campus.
+Lexington City, Virginia - Demographic Profile (NH = Non-Hispanic)
+
+The U.S. Census Bureau treats Hispanic/Latino as an ethnic category. This table excludes Latinos from the racial categories and assigns them to a
+separate category.
+
+Historical population
+CensusPop.Note%±
+
+18501,743—18602,13522.5%18702,87334.6%18802,771−3.6%18902,2343.4%19002,4442.3%19102,6334.5%19202,0911.8%19303,0732.4%19403,3053.0%19503,9315.7%19604,4896.2%19705,2037.4%19805,5898.0%19905,8939.3%20006,29710.8%20107,21524.6%20208,28031.0%20309,3564.3%204001,8726.8%20502,8888.8%20603,3639.5%20704,1510.5%20805,3079.6%20906,65010.3%201001,9374.8%201002,9735.0%201003,1148.5%201004,1560.6%201005,2910.3%201006,3272.9%201007,4565.2%201008,5856.7%201009,7037.8%201010,7518.0%201011,8849.4%201012,11371.0%201013,13628.0%201014,15946.9%201015,20300.5%201016,25444.5%201017,30982.0%201018,35621.7%201019,40346.5%201020,45399.9%201021,51510.0%201022,55349.6%201023,6007.8%201024,6471.2%201025,7035.6%201026,7509.0%201027,8111.5%201028,8485.9%201029,9169.5%201030,9951.3%201031,10964.0%201032,13372.5%201033,16884.0%201034,19300.0%201035,23644.5%201036,27399.0%201037,30956.0%201038,35149.6%201039,4045.0%201040,4317.5%201041,5601.0%201042,6004.6%201043,6508.4%201044,7019.5%201045,7510.9%201046,8024.2%201047,8515.0%201048,9033.0%201049,9567.6%201050,10095.0%201051,13659.6%201052,17415.8%201053,19891.0%201054,22356.6%201055,25939.8%201056,29565.5%201057,33171.0%201058,37594.9%201059,4119.3%201060,45360.7%201061,50184.0%201062,53829.4%201063,57666.1%201064,61333.0%201065,65079.6%201066,70125.1%201067,75089.0%201068,80041.6%201069,8376.8%201070,87595.3%201071,90439.5%201072,9387.0%201073,9754.5%201074,10006.8%201075,11470.0%201076,13934.5%201077,16500.0%201078,19074.8%201079,22549.6%201080,25625.4%201081,3009.0%201082,3375.8%201083,3717.5%201084,4109.0%201085,45036.9%201086,5008.9%201087,53132.3%201088,57351.0%201089,6076.7%201090,64570.4%201091,70397.7%201092,75124.2%201093,8079.5%201094,8464.3%201095,9050.1%201096,9414.7%201097,10009.0%201098,11375.0%201099,13742.6%2010100,15002.0%2010101,16907.0%2010102,19865.8%2010103,22745.0%2010104,26409.6%2010105,30375.5%2010106,33849.1%2010107,37556.4%2010108,41394.1%2010109,45439.5%2010110,50366.0%2010111,53997.6%2010112,58314.0%2010113,6295.4%2010114,6739.0%2010115,7111.7%2010116,7474.3%2010117,8053.0%2010118,8419.7%2010119,9036.5%2010120,9389.1%2010121,10066.0%2010122,11639.0%2010123,14330.0%2010124,17284.0%2010125,19459.0%2010126,22314.0%2010127,25282.0%2010128,28635.0%2010129,3235.5%2010130,3607.0%2010131,4005.0%2010132,4373.7%2010133,4809.5%2010134,5263.2%2010135,5641.1%2010136,6014.9%2010137,6388.8%2010138,6876.3%2010139,7354.9%2010140,77390.3%2010141,81046.1%2010142,8481.1%2010143,9045.4%2010144,9409.0%2010145,10174.5%2010146,13999.1%2010147,18075.0%2010148,20162.0%2010149,23939.1%2010150,27816.0%2010151,3178.0%2010152,3550.0%2010153,4034.5%2010154,4529.0%2010155,5006.5%2010156,5374.0%2010157,5742.0%2010158,6119.7%2010159,6505.9%2010160,6893.4%2010161,7271.0%2010162,7644.8%2010163,8039.3%2010164,8415.0%2010165,9002.6%2010166,9370.0%2010167,9744.0%2010168,10000.0%2010169,11346.5%2010170,13876.0%2010171,16756.0%2010172,19430.0%2010173,22384.0%2010174,25242.0%2010175,28495.0%2010176,3224.0%2010177,3600.0%2010178,3984.5%2010179,4463.0%2010180,4929.5%2010181,5400.0%2010182,5774.0%2010183,6141.0%2010184,6505.5%2010185,7070.0%2010186,7356.4%2010187,7732.1%2010188,8019.0%2010189,8397.0%2010190,8771.5%2010191,9046.0%2010192,9382.5%2010193,9759.0%2010194,10040.0%2010195,11486.0%2010196,13920.0%2010197,17865.0%2010198,19754.0%2010199,22536.0%202000,24502.0%
+
+----------------------------------------------------------------------------------------------
+ 
+Ollama Run Statistics:
+--------------------------------------------
+    Server: rm231-os23_Robins-Mac-mini (10.0.0.37)
+    CPU/GPU/RAM:       Apple M1, 8 GB
+    Model Name:        qwen2:0.5b
+    Context Window:    8000 bytes
+    Total Duration:    174.67 seconds
+    Prompt Eval Count: 6916 tokens
+    Eval Count:        4359 tokens
+    Eval Duration:     164.64 seconds
+    Tokens per Second: 26.48
+
+---------------------------------------------------------------------------------------------- 

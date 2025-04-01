@@ -1,0 +1,49 @@
+
+
+  Search Prompt: "Lexington VA"
+  AI Prompt:     "How is the tourism?"
+  Fetching from: https://api.duckduckgo.com/?q=Lexington%20VA&format=json
+
+ Empty response from DuckDuckGo.
+    Fetching https://www.lexingtonvirginia.com/
+
+Compined Prompt for Model llama3:latest:
+---------------------------------------------------------------------------------------------- 
+  Docs:   1 Sources,  1849 bytes from https://www.lexingtonvirginia.com/
+  Query:  How is the tourism?
+  Prompt:{Query}.Summarize the information and provide an answer. Use only the information in the following articles to answer the question:{Docs}
+
+Ollama Model Response:
+---------------------------------------------------------------------------------------------- 
+Based on the provided articles from Lexington, Virginia's website, here is a summary of the tourism information:
+
+There are various events and activities scheduled throughout April 2025 that might interest tourists. Some highlights include:
+
+* The Lexington Farmer's Market runs weekly all year-round, with the next event happening on April 2nd.
+* Growler Grab Day takes place at Devils Backbone Outpost Tap Room & Kitchen on April 2nd.
+* Growler Fill Specials are available every Thursday at Great Valley Farm Brewery & Winery starting from April 3rd.
+* Tick Awareness Week is scheduled for April 4th, with an event at Walkabout Outfitter to educate visitors on tick protection.
+* Complimentary wine and food tastings take place at Lexington Mercantile on Fridays from 4 pm to 6 pm, starting from April 4th.
+* Wine tasting events are also available every Friday night from 5 to 7 pm at Purveyors on Main, starting from April 4th.
+* The First Friday Art Walk returns for 2025, with artist receptions and new exhibitions in downtown Lexington on April 4th.
+* A Senior Recital featuring Matt Flynn, Baritone, takes place at Wilson Concert Hall/Lenfest Center on April 4th.
+
+These events and activities provide a range of options for tourists to explore the local culture, food, drink, art, and entertainment scene.
+
+----------------------------------------------------------------------------------------------
+ 
+Ollama Run Statistics:
+--------------------------------------------
+    Server: rm231d-os15_Robins-Mac-mini (10.0.0.37)
+    Operating System:  Sonoma v15.2
+    CPU/GPU/RAM:       Apple M1, 8 GB
+    Computer:          Apple Mac Mini (2022)
+    Model Name:        llama3:latest
+    Context Window:    16000 bytes
+    Total Duration:    3635.17 seconds
+    Prompt Eval Count: 660 tokens
+    Eval Count:        288 tokens
+    Eval Duration:     3603.71 seconds
+    Tokens per Second: 0.08 seconds
+
+---------------------------------------------------------------------------------------------- 

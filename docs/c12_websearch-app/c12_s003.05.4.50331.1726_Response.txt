@@ -1,0 +1,100 @@
+
+
+  Search Prompt: "Lexington Va"
+  AI Prompt:     "What are the city's restaurants?"
+  Fetching from: https://api.duckduckgo.com/?q=Lexington%20Va&format=json
+---------------------------------------------------------------------------------------------- 
+Response from DuckDuckGo:
+
+  API Response:
+
+  "AbstractURL": "https://en.wikipedia.org/wiki/Lexington%2C_Virginia",
+  "Results": "
+     http://lexingtonva.gov/
+       Official site
+     https://www.lexingtonva.gov/
+       Official site - Lexington, Virginia",
+  "RelatedTopics": "
+     https://duckduckgo.com/c/Lexington%2C_Virginia
+       Lexington, Virginia Category
+     https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+       National Register of Historic Places listings in Lexington, Virginia - This is a list of the National Register of Historic Places listings in Lexington, Virginia. This is intended to be a complete list of the properties and districts on the National Register of Historic Places in the independent city of Lexington, Virginia, United States.
+     https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+       Rockbridge County, Virginia
+     https://duckduckgo.com/c/Cities_in_Virginia
+       Cities in Virginia
+     https://duckduckgo.com/c/Flag_controversies_in_the_United_States
+       Flag controversies in the United States
+     https://duckduckgo.com/c/County_seats_in_Virginia
+       County seats in Virginia"
+
+  Found 5 URLs:
+    Fetching https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+    Fetching http://lexingtonva.gov/
+    Fetching https://www.lexingtonva.gov/
+    Fetching https://duckduckgo.com/c/Lexington%2C_Virginia
+    Fetching https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+
+Compined Prompt for Model gemma2:2b:
+---------------------------------------------------------------------------------------------- 
+  Docs:   5 Sources, 20817 bytes from https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+  Query:  What are the city's restaurants?
+  Prompt:{Query}.Summarize the information and provide an answer. Use only the information in the following articles to answer the question:{Docs}
+
+Ollama Model Response:
+---------------------------------------------------------------------------------------------- 
+This text provides a rich overview of Lexington, Virginia, covering its history, demographics, economic activities, and points of interest. 
+
+Here's a summary of the key information:
+
+**Location & History:**
+
+* **City location:**  Lexington is located in the Shenandoah Valley, Virginia, approximately 57 miles east of Roanoke, Virginia.
+* **History:** Founded in 1778, Lexington holds significance for its close connection to the American Civil War and its role as home to Washington
+    and Lee University (W&L). It was named after the Revolutionary War-era "Lexington" which marked a key turning point during the war between the
+    North and South.
+* **Civil War ties:**  The city played host to numerous significant battles in the Civil War, attracting visitors interested in its historical
+    legacy.
+
+**Demographics & Economy:**
+
+* **Population:** Lexington boasts a population of around 7,320 (as per the US Census), demonstrating growth over time.
+* **Economy:** The city's economy is primarily driven by:  Higher education (W&L University) which attracts students and tourists; tourism
+    centered on historic sites, museums, and events; and local retail businesses serving both residents and visitors. 
+
+**Attractions & Cultural Life:**
+
+* **Historical Sites:** Lexington features a plethora of historical attractions such as the Stonewall Jackson House, W&L Museum, and numerous
+    Civil War monuments.
+* **Cultural Institutions:**  The city hosts vibrant cultural institutions like the Virginia Horse Center for equestrian events, the Hull's
+    Drive-In theater (a landmark for its unique community model), and various local restaurants catering to diverse tastes.
+
+
+**Key Points to Remember**
+
+* **Location:** Lexington is situated in the heart of the Shenandoah Valley, offering easy access to nature, adventure, and cultural experiences.
+* **Tourism:**  Its historical significance, coupled with a lively economy, attracts visitors from all over. 
+* **Education:** W&L University plays a pivotal role in shaping Lexington's identity as it draws students and contributes to its intellectual
+    vibrancy.
+
+To gain a deeper understanding of Lexington, explore its official website for more information or delve into the numerous resources listed on
+    sites like Wikipedia, tourism boards (e.g., Virginia Tourism), and historical societies. 
+
+
+----------------------------------------------------------------------------------------------
+ 
+Ollama Run Statistics:
+--------------------------------------------
+    Server: rm231-os15_Robins-Mac-mini (10.0.0.37)
+    Operating System:  Sonoma v15.2
+    CPU/GPU/RAM:       Apple M1, 8 GB
+    Computer:          Apple Mac Mini (2022)
+    Model Name:        gemma2:2b
+    Context Window:    16000 bytes
+    Total Duration:    54.08 seconds
+    Prompt Eval Count: 7003 tokens
+    Eval Count:        475 tokens
+    Eval Duration:     28.73 seconds
+    Tokens per Second: 16.53 seconds
+
+---------------------------------------------------------------------------------------------- 

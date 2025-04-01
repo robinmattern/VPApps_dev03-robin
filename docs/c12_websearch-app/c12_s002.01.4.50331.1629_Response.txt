@@ -1,0 +1,117 @@
+
+  Search Prompt: "Lexington Va"
+  AI Prompt:     "What are the city's restaurants?"
+  Fetching from: https://api.duckduckgo.com/?q=Lexington%20Va&format=json
+---------------------------------------------------------------------------------------------- 
+Response from DuckDuckGo:
+
+  API Response:
+
+  "AbstractURL": "https://en.wikipedia.org/wiki/Lexington%2C_Virginia",
+  "Results": "
+     http://lexingtonva.gov/
+       Official site
+     https://www.lexingtonva.gov/
+       Official site - Lexington, Virginia",
+  "RelatedTopics": "
+     https://duckduckgo.com/c/Lexington%2C_Virginia
+       Lexington, Virginia Category
+     https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+       National Register of Historic Places listings in Lexington, Virginia - This is a list of the National Register of Historic Places listings in Lexington, Virginia. This is intended to be a complete list of the properties and districts on the National Register of Historic Places in the independent city of Lexington, Virginia, United States.
+     https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+       Rockbridge County, Virginia
+     https://duckduckgo.com/c/Cities_in_Virginia
+       Cities in Virginia
+     https://duckduckgo.com/c/Flag_controversies_in_the_United_States
+       Flag controversies in the United States
+     https://duckduckgo.com/c/County_seats_in_Virginia
+       County seats in Virginia"
+
+  Found 5 URLs:
+    Fetching https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+    Fetching http://lexingtonva.gov/
+    Fetching https://www.lexingtonva.gov/
+    Fetching https://duckduckgo.com/c/Lexington%2C_Virginia
+    Fetching https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+
+Compined Prompt for Model qwen2:0.5b:
+---------------------------------------------------------------------------------------------- 
+  Docs:   5 Sources, 20817 bytes from https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+  Query:  What are the city's restaurants?
+  Prompt:{Query}.Summarize the information and provide an answer. Use only the information in the following articles to answer the question:{Docs}
+
+Ollama Model Response:
+---------------------------------------------------------------------------------------------- 
+Lexington, Virginia is a city in the Commonwealth of Virginia, United States. It is the county seat of Rockbridge County and is also home to the
+    Virginia Military Institute and Washington and Lee University. Lexington's economy is largely dependent on higher education and tourism. The city
+    has two municipal governments, one being based at the historic first Baptist Church along Main Street and the other being based at the Stonewall
+    Jackson House. In addition to its unique combination of educational institutions, Lexington is also known for its rich history with connections to
+    the Civil War. Its population was 7,320 in 2010, and 2,753 in 2020. 
+
+Lexington has a total area of 2.5 square miles (6.54 km²), consisting mostly of land. The city is located at the intersection of historic U.S.
+    Route 11 and U.S. Route 60, and more modern highways such as Interstate 64 and Interstate 81.
+
+The climate in Lexington, Virginia is characterized by hot, humid summers and mild to cool winters, similar to Northern Italy with a humid
+    subtropical climate. The hardiness zone is 7a.
+
+Lexington City Government
+
+City Hall
+Location: Lexington, Virginia
+Phone: (540) 51-4551
+E-Mail:
+
+Mayor Frank W Friedman
+City manager Jim Halasz
+Commissioner of Revenue Karen T Roundy
+Treasurer Patricia DeLaney
+City Attorney Jeremy Carroll, Esquire
+
+The mayor is Frank W. Friedman, a Democrat. City Manager Jim Halasz serves as the city manager.
+The commission consists of 5 councilmen from both sides of the line and two other members elected at-large.
+
+Lexington's government sites are found in the historic first Baptist Church along Main Street, with nearby landmarks including the Stonewall
+    Jackson House, University Chapel, the George C. Marshall Library, Virginia Military Institute Museum, Museum of Military Memorabilia, and the
+    downtown historic district. The city also has two municipal governments, one based at the historic first Baptist Church and another at the
+    Stonewall Jackson House.
+
+Lexington's economy is largely dependent on higher education and tourism. The city includes institutions like the Virginia Military Institute,
+    Washington and Lee University, and other universities from the United States. It offers a number of properties that include Anderson Hollow
+    Archaeological District, Cedar Hill Church and Cemeteries, Chapel Hill, Church Hill, Clifton, Hamilton Schoolhouse, Liberty Hall Site, Lylburn
+    Downing School, Maple Hall, John Moore House, Mountain View Farm, Margaret E. Poague House, Springdale, Stone House, Sunnyside, Tankersley Tavern,
+    Thorn Hill, Timber Ridge Presbyterian Church, and Willson House.
+
+Lexington's government websites include the city of license for radio stations WIQR (88.7 FM), WMRL (89.9 FM), and WLUR (91.5 FM). There are also
+    government offices at the historic first Baptist Church along Main Street in Lexington.
+
+The U.S. Census Bureau states that the city has a total area of 2.5 square miles (6.54 km²) and roughly 2,753 people.
+Lexington's official website is lexingtonva.gov/. The census data for the year of 2020 can be found on the U.S. Census Bureau website.
+
+The Lexington city government has a total area of 2.5 square miles (6.54 km²), consisting mostly of land. It is located at the intersection of
+    historic U.S. Route 11 and U.S. Route 60, and more modern highways such as Interstate 64 and Interstate 81.
+The Lexington city government has two municipal governments based at historic first Baptist Church along Main Street in the city, while there are
+    also properties found at the Stonewall Jackson House. The government has a total area of 2.5 square miles (6.54 km²). Its population is
+    approximately 7,320 people.
+
+The Lexington city government also has two municipal governments based at the historic first Baptist Church along Main Street in the city, while
+    there are properties found at the Stonewall Jackson House. The city provides a total area of 2.5 square miles (6.54 km²) and roughly 2,753 people.
+
+Lexington City's government website is lexingtonva.gov/. There is also a U.S. Census Bureau website available.
+
+----------------------------------------------------------------------------------------------
+ 
+Ollama Run Statistics:
+--------------------------------------------
+    Server: rm231-os15_Robins-Mac-mini (10.0.0.37)
+    Operating System:  Sonoma v15.2
+    CPU/GPU/RAM:       {process.env.THE_CPU}, Apple M1, 8 GB
+    Computer:          Apple Mac Mini (2022)
+    Model Name:        qwen2:0.5b
+    Context Window:    8000 bytes
+    Total Duration:    43.86 seconds
+    Prompt Eval Count: 6922 tokens
+    Eval Count:        929 tokens
+    Eval Duration:     33.87 seconds
+    Tokens per Second: 27.43 seconds
+
+---------------------------------------------------------------------------------------------- 

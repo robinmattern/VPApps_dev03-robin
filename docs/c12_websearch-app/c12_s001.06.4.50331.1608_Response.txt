@@ -1,0 +1,86 @@
+
+  Search Prompt: "Lexington Va"
+  AI Prompt:     "What are the city's resttaurants?"
+  Fetching from: https://api.duckduckgo.com/?q=Lexington%20Va&format=json
+---------------------------------------------------------------------------------------------- 
+Response from DuckDuckGo:
+
+  API Response:
+
+  "AbstractURL": "https://en.wikipedia.org/wiki/Lexington%2C_Virginia",
+  "Results": "
+     http://lexingtonva.gov/
+       Official site
+     https://www.lexingtonva.gov/
+       Official site - Lexington, Virginia",
+  "RelatedTopics": "
+     https://duckduckgo.com/c/Lexington%2C_Virginia
+       Lexington, Virginia Category
+     https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+       National Register of Historic Places listings in Lexington, Virginia - This is a list of the National Register of Historic Places listings in Lexington, Virginia. This is intended to be a complete list of the properties and districts on the National Register of Historic Places in the independent city of Lexington, Virginia, United States.
+     https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+       Rockbridge County, Virginia
+     https://duckduckgo.com/c/Cities_in_Virginia
+       Cities in Virginia
+     https://duckduckgo.com/c/Flag_controversies_in_the_United_States
+       Flag controversies in the United States
+     https://duckduckgo.com/c/County_seats_in_Virginia
+       County seats in Virginia"
+
+  Found 5 URLs:
+    Fetching https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+    Fetching http://lexingtonva.gov/
+    Fetching https://www.lexingtonva.gov/
+    Fetching https://duckduckgo.com/c/Lexington%2C_Virginia
+    Fetching https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+
+Compined Prompt for Model qwen2:0.5b:
+---------------------------------------------------------------------------------------------- 
+  Docs:   5 Sources, 20815 bytes from https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+  Query:  What are the city's resttaurants?
+  Prompt:{Query}.Summarize the information and provide an answer. Use only the information in the following articles to answer the question:{Docs}
+
+Ollama Model Response:
+---------------------------------------------------------------------------------------------- 
+Lexington is an independent city in the Commonwealth of Virginia, United States. It was established as Lexington and Wash., Virginia in 1778 by
+    Thomas Jefferson. 
+It's located at the intersection of historic U.S. Route 11 and U.S. Route 60 and more modern highways, Interstate 64 and Interstate 81.
+Lexington is known for its rich history, including places like the Stonewall Jackson House, University Chapel, George C. Marshall Foundation,
+    Virginia Military Institute Museum, Museum of Military Memorabilia, and the downtown historic district. It also contains a number of small
+    businesses catering to a unique mixture of local, tourist, and collegiate clientele.
+The city has a total area of 2.5 square miles (6.54 km²), consisting of land. The Maury River, a tributary of the James River, forms the city's
+    northeastern boundary. Lexington is best known for its history as a college town with several colleges and universities located around it.
+Lexington has a population of 7,320 people in 2020 according to the United States Census Bureau. It was established by Thomas Jefferson on the
+    same day he was elected president.
+The city's government is combined with Lexington for statistical purposes as the independent city seat, and its mayor, Frank W Friedman, has been
+    in office since 1964. The city council also includes city manager Jim Halasz, Commissioner of Revenue Karen T. Roundy, Treasurer Patricia DeLaney,
+    and City Attorney Jeremy Carroll, Esquire.
+Lexington is known for hosting the Virginia Military Institute (VMI) where Thomas "Stonewall" Jackson, an American General who fought in the Civil
+    War and was one of the country's greatest military leaders, studied during his time at VMI. 
+It also contains a unique blend of college town with numerous small businesses catering to a unique mixture of local, tourist, and collegiate
+    clientele.
+Lexington is part of the Shenandoah Valley about 57 miles (92 km) east of the West Virginia border and is about 50 miles (80 km) north of Roanoke,
+    Virginia. 
+It's the center for the university, a large historic college that was founded in 1836 by Thomas Jefferson and has been continuously recognized as
+    a model institution since it was established.
+Lexington is home to several museums such as the Stonewall Jackson House and the University Chapel on which President Jackson studied during his
+    time at VMI. The George C. Marshall Foundation also hosts exhibits and events. It houses Virginia Military Institute, a major state university
+    that is part of the U.S. Department of Education.
+Lexington contains several historic sites including the Stonewall Jackson House, University Chapel, and many other places. 
+It's known for its unique college vibe with small town ambiance in the center.
+
+----------------------------------------------------------------------------------------------
+ 
+Ollama Run Statistics:
+--------------------------------------------
+    Server: rm231-os15_Robins-Mac-mini (10.0.0.37)
+    CPU/GPU/RAM:       Apple M1, 8 GB
+    Model Name:        qwen2:0.5b
+    Context Window:    8000 bytes
+    Total Duration:    22.12 seconds
+    Prompt Eval Count: 6921 tokens
+    Eval Count:        590 tokens
+    Eval Duration:     21.21 seconds
+    Tokens per Second: 27.81 seconds
+
+---------------------------------------------------------------------------------------------- 

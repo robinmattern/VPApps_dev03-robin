@@ -1,0 +1,67 @@
+
+  Search Prompt: "Lexington Va"
+  AI Prompt:     "Tell me about the city's restaurants"
+  Fetching from: https://api.duckduckgo.com/?q=Lexington%20Va&format=json
+---------------------------------------------------------------------------------------------- 
+Response from DuckDuckGo:
+
+  API Response:
+
+  "AbstractURL": "https://en.wikipedia.org/wiki/Lexington%2C_Virginia",
+  "Results": "
+     http://lexingtonva.gov/
+       Official site
+     https://www.lexingtonva.gov/
+       Official site - Lexington, Virginia",
+  "RelatedTopics": "
+     https://duckduckgo.com/c/Lexington%2C_Virginia
+       Lexington, Virginia Category
+     https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+       National Register of Historic Places listings in Lexington, Virginia - This is a list of the National Register of Historic Places listings in Lexington, Virginia. This is intended to be a complete list of the properties and districts on the National Register of Historic Places in the independent city of Lexington, Virginia, United States.
+     https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+       Rockbridge County, Virginia
+     https://duckduckgo.com/c/Cities_in_Virginia
+       Cities in Virginia
+     https://duckduckgo.com/c/Flag_controversies_in_the_United_States
+       Flag controversies in the United States
+     https://duckduckgo.com/c/County_seats_in_Virginia
+       County seats in Virginia"
+
+  Found 5 URLs:
+    Fetching https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+    Fetching http://lexingtonva.gov/
+    Fetching https://www.lexingtonva.gov/
+    Fetching https://duckduckgo.com/c/Lexington%2C_Virginia
+    Fetching https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+
+Compined Prompt for Model qwen2:0.5b:
+---------------------------------------------------------------------------------------------- 
+  Docs:   5 Sources, 20815 bytes from https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+  Query:  Tell me about the city's restaurants
+  Prompt:{Query}.Summarize the information and provide an answer. Use only the information in the following articles to answer the question:{Docs}
+
+Ollama Model Response:
+---------------------------------------------------------------------------------------------- 
+Lexington, Virginia is an independent city in the Commonwealth of Virginia, United States. It was founded in 1778 and named for the town where
+George C. Marshall died while serving as General Thomas Stonewall Jackson. Lexington is the site of the Virginia Military Institute, which became
+the only military institution in history to be organized entirely around education and training. The city has been a major center for science,
+medicine, engineering, and politics, and its role continues to evolve with universities and colleges like W&L University and Virginia Commonwealth
+University. Other notable events include the filming of War of the Roses, including scenes from the Civil War. Lexington's economy is diverse and
+includes tourism, education, healthcare, and manufacturing industries. The city has been named as a destination by National Geographic, as well as
+United States News & World Report and Forbes magazine, as it is often referred to as "The City of Liberty".
+
+----------------------------------------------------------------------------------------------
+ 
+Ollama Run Statistics:
+--------------------------------------------
+    Server: rm231-os23_Robins-Mac-mini (10.0.0.37)
+    CPU/GPU/RAM:       Apple M1, 8 GB
+    Model Name:        qwen2:0.5b
+    Context Window:    8000 bytes
+    Total Duration:    7.51 seconds
+    Prompt Eval Count: 6920 tokens
+    Eval Count:        186 tokens
+    Eval Duration:     6.58 seconds
+    Tokens per Second: 28.28
+
+---------------------------------------------------------------------------------------------- 

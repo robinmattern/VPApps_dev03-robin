@@ -1,0 +1,99 @@
+
+  Search Prompt: "Lexington Va"
+  AI Prompt:     "Tell me about the city's restaurants"
+  Fetching from: https://api.duckduckgo.com/?q=Lexington%20Va&format=json
+---------------------------------------------------------------------------------------------- 
+Response from DuckDuckGo:
+
+  API Response:
+
+  "AbstractURL": "https://en.wikipedia.org/wiki/Lexington%2C_Virginia",
+  "Results": "
+     http://lexingtonva.gov/
+       Official site
+     https://www.lexingtonva.gov/
+       Official site - Lexington, Virginia",
+  "RelatedTopics": "
+     https://duckduckgo.com/c/Lexington%2C_Virginia
+       Lexington, Virginia Category
+     https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+       National Register of Historic Places listings in Lexington, Virginia - This is a list of the National Register of Historic Places listings in Lexington, Virginia. This is intended to be a complete list of the properties and districts on the National Register of Historic Places in the independent city of Lexington, Virginia, United States.
+     https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+       Rockbridge County, Virginia
+     https://duckduckgo.com/c/Cities_in_Virginia
+       Cities in Virginia
+     https://duckduckgo.com/c/Flag_controversies_in_the_United_States
+       Flag controversies in the United States
+     https://duckduckgo.com/c/County_seats_in_Virginia
+       County seats in Virginia"
+
+  Found 5 URLs:
+    Fetching https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+    Fetching http://lexingtonva.gov/
+    Fetching https://www.lexingtonva.gov/
+    Fetching https://duckduckgo.com/c/Lexington%2C_Virginia
+    Fetching https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+
+Compined Prompt for Model qwen2:0.5b:
+---------------------------------------------------------------------------------------------- 
+  Docs:   5 Sources, 20817 bytes from https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+  Query:  Tell me about the city's restaurants
+  Prompt:{Query}.Summarize the information and provide an answer. Use only the information in the following articles to answer the question:{Text}
+
+Ollama Model Response:
+---------------------------------------------------------------------------------------------- 
+Lexington is a city located in the Commonwealth of Virginia, United States. Its population was 7320 people at the time of the 2020 census and its
+latitude and longitude are 37.78389°N, 79.44278°W (GMT). The city's administrative center is in Rockbridge County but it is home to a unique mix
+of educational institutions including Virginia Military Institute (VMI) and Washington and Lee University.
+
+The city is best known for being the site of the Union General David Hunter, who led a raid on Virginia Military Institute during the American
+Civil War. The first house owned by Confederate general Thomas "Stonewall" Jackson was built in 1864 and it still serves as the residence of
+Stonewall Jackson. 
+
+Lexington is also home to several historic buildings, including:
+
+- Lexington High School, which was built around 1908
+
+- The George C. Marshall Foundation
+
+- Robert E. Lee grave site at Oak Grove Cemetery
+
+- The Thomas "Stonewall" Jackson House
+
+- University Chapel in the city of Lexington
+
+The city is also home to several schools including:
+
+- Virginia Military Institute (VMI)
+
+- Washington and Lee University
+
+In addition, Lexington is located on the historic route U.S. Route 60 from the West Virginia border to the East Virginia County line. It's known
+for being a stop on many tourist routes as it's home to several attractions like the Stonewall Jackson House, university Chapel, and the Lee
+Chapel Museum.
+
+The city also has a unique blend of educational institutions including Virginian Military Institute (VMI) and Washington and Lee University. The
+town is divided into two distinct areas: the historical district and the modern county center.
+
+In 2019, Lexington was the site of several protests against red-hat displays at the Red Hen restaurant in Lexington, Virginia. The protest was
+sparked by a complaint from White House Press Secretary Sarah Huckabee Sanders about the flag displaying Confederate symbols on city light poles
+during the Civil War.
+
+The history and cultural significance of Lexington are highly regarded by Virginia's citizens as they celebrate its past with significant
+landmarks like Washington and Lee University, Virginia Military Institute, and Virginia Historic District.
+
+----------------------------------------------------------------------------------------------
+ 
+Ollama Run Statistics:
+--------------------------------------------
+    Server: rm231-os23_Robins-Mac-mini (10.0.0.37)
+    CPU/GPU/RAM:       Apple M1, 8 GB
+    Model Name:        qwen2:0.5b
+    Context Window:    8000 bytes
+    Total Duration:    26.86 seconds
+    Prompt Eval Count: 6918 tokens
+    Eval Count:        465 tokens
+    Eval Duration:     16.66 seconds
+    Tokens per Second: 27.90
+
+---------------------------------------------------------------------------------------------- 
