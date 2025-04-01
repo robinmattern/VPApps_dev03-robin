@@ -1,6 +1,6 @@
 /*\
 ##=========+====================+================================================+
-##RD        AIC90_FileFns       | AICodeR Function
+##RD        AIC90_FileFns       | AICodeR Functions
 ##RFILE    +====================+=======+===============+======+=================+
 ##FD  AIC90_FileFns_u##.mjs     |   ####|  1/19/25 HH:MM|   ###| p1.01`.501DD.HHMM
 #
@@ -10,7 +10,7 @@
 ##LIC      .--------------------+----------------------------------------------+
 #            Copyright (c) 2025 JScriptWare and 8020Date-FormR * Released under
 #            MIT License: http://www.opensource.org/licenses/mit-license.php
-##ionS     .--------------------+----------------------------------------------+
+##FNS      .--------------------+----------------------------------------------+
 #                               |
 #       ion  sayMsg( aMsg, nSay, bCR ) {
 #       ion  exit_wCR( nErr ) {
@@ -51,6 +51,7 @@
 #.(50210.02   2/10/25 RAM 10:23a| Write copyFile functions
 #.(50210.02b  3/02/25 RAM 11:45a| Write appendFile functions
 #.(50209.01c  3/17/25 RAM  6:36p| Format code 
+#.(50331.02   3/31/25 RAM 10:00a| Save log to docs  
 
 ##PRGM     +====================+===============================================+
 ##ID 69.600. Main0              |
@@ -153,15 +154,23 @@
 //          global.aLogFile = path.join( __basedir2, `../._/LOGs/_v${_TS.slice(0,5)}/${aFile}_v${_TS}.log` ) 
        var  aLogFile        =  aFile.replace( /{aTD}/, _TS.slice(0,5) ).replace( /{aTS}/, _TS )
 //     var  aDir            = `._/LOGs/_v${_TS.slice(0,5)}/${ aFile.split( /[\\\/]/ ).slice(0,-1).join( "/") }` 
-       var  aDir            = `._/LOGs/${                          aLogFile.split( /[\\\/]/ ).slice(0,-1).join( "/") }`
+        if (aFile.match( /docs\//)) {                                                   // .(50331.02.1 RAM Put log into /docs Beg)
+       var  aDir            = `${ aLogFile.split( /[\\\/]/ ).slice(0,-1).join( "/") }`
+       var  aLogDir         =  path.join( `${__basedir}`, aDir )          
+        } else {                                                                        // .(50331.02.1 Beg)
+       var  aDir            = `._/LOGs/${ aLogFile.split( /[\\\/]/ ).slice(0,-1).join( "/") }`
+       var  aLogDir         =  path.join( `${__basedir2}/..`, aDir )          
 //          global.aLogFile = path.join( `${__basedir2}/..`, aDir, aLogFile.split( /[\\\/]/ ).slice(-1)[0]) //#.(50329.04.1 RAM path.join behaves differently in VSCode, that Node)
-            global.aLogFile = FRT_path(  `${__basedir2}/..`, aDir, aLogFile.split( /[\\\/]/ ).slice(-1)[0]) // .(50329.04.1 RAM Use FRT_path) 
-//          fsync.mkdirSync(  path.join( `${__basedir2}/..`, aDir ), { recursive: true } )                  //#.(50329.04.2) 
-            fsync.mkdirSync(  FRT_path(  `${__basedir2}/..`, aDir ), { recursive: true } )                  // .(50329.04.2) 
+//          global.aLogFile = FRT_path(  `${__basedir2}/..`, aDir, aLogFile.split( /[\\\/]/ ).slice(-1)[0]) //#.(50329.04.1 RAM Use FRT_path).(50331.02.2) 
+//          fsync.mkdirSync(  path.join( `${__basedir2}/..`, aDir ), { recursive: true } )                  //#.(50329.04.2).(50331.02.2) 
+            }
+//          global.aLogDir  = aLogDir                                                   //#.(50331.02.4 RAM Save aLogDir) 
+            global.aLogFile = FRT_path( aLogDir, aLogFile.split(/[\\\/]/).slice(-1)[0]) // .(50331.02.2).(50329.04.1 RAM Use FRT_path) 
+            fsync.mkdirSync(  aLogDir, { recursive: true } )                            // .(50331.02.3).(50329.04b.2) 
             fsync.writeFileSync( global.aLogFile, '' ); 
-        
+
         if (global.aLogFile.match(/bash|user/) == null) {                               // .(50301.02.1)
-            console.log( `  - AIC90[ 158]  Setting logfile to: '${global.aLogFile}` )
+            console.log( `  - AIC90[ 171]  Setting logfile to: '${global.aLogFile}` )
             }  }                                                                        // .(50301.02.2)
          }; // eof saySet                                                               // .(50218.01.7 End)
 // --  ---  --------  =  --  =  ------------------------------------------------------  #  ---------------- #
