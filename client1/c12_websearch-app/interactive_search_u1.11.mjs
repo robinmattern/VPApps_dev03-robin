@@ -33,6 +33,7 @@
 #.(50331.04b  3/31/25 RAM  7:15p| Update StatsFile name   
 #.(50330.04c  3/31/25 RAM  7:35p| Add web searchPrompt
 #.(50331.05   3/31/25 RAM  9:00p| Add ReponseFile to Stats and CSV
+#.(50331.07   3/31/25 RAM  9:30p| Don't prompt when inVSCode
 
 ##PRGM     +====================+===============================================+
 ##ID 69.600. Main0              |
@@ -127,7 +128,7 @@ import { Stats } from "fs";
                                 FRT.setEnv( "NEXT_POST", aNextPost, FRT.__dirname)                          // .(50331.08.5) 
 
 //     var  aLogFile         =      `./${aAppDir}/${aAppDir.slice(0,3)}_t001.01.4.${aTS}_Response.txt`      //#.(50331.02.5)
-       var  aLogFile         = `./docs/${aAppDir}/${aRespId}.4.${aTS}_Response.txt`                         // .(50331.08.2).(50331.02.5 RAM put it in /docs)
+       var  aLogFile         = `./docs/${aAppDir}/${aRespId}.4.${aTS}_Response.txt`                         // .(50331.08.6).(50331.02.5 RAM put it in /docs)
                                 FRT.setSay( nLog, aLogFile )                                                // .(50331.04.5 RAM nLog was 3)
 //     var  aStatsFile       =  FRT.join( __basedir, `./docs/${aAppDir}/${aAppDir.slice(0,3)}_Stats.csv` )   
        var  aStatsFile       = `${aAppDir.slice(0,3)}_Stats_u${aTS.slice(0,5)}-${aSvr}.csv`                 // .(50331.04b.1 RAM Update StatsFile name)
@@ -154,7 +155,7 @@ import { Stats } from "fs";
   async  function  main( ) {     
        let  searchPrompt, aiPrompt; // Prompt user for search and AI queries
   
-        if (bDebug == true || bIsInVSCode ) {                                                                                             //.(50331.07.2)
+        if (bDebug == true || bIsInVSCode ) {                                           //.(50331.07.2)
             searchPrompt     =  aSearch       // "Lexington Va";                                                                             // .(50331.04.6)
             aiPrompt         =  aAIPrompt     // "The city's restaurants";                                                                   // .(50331.04.7)
         } else {
