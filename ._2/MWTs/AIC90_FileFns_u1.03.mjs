@@ -29,6 +29,7 @@
 #       ion  makDirSync(    aDirName  ) {
 # async ion  function createDirectoryIfNotExists( dirPath ) {
 #       ion  lastFile( aPath, reFind ) {
+#       ion  setEnv( aVar, aVar, aDir ) {
 #       ion  getDir(  pattern, aDir ) {
 #       ion  getFile( pattern ) {
 #       ion  firstFile( aPath, reFind ) {
@@ -52,6 +53,7 @@
 #.(50210.02b  3/02/25 RAM 11:45a| Write appendFile functions
 #.(50209.01c  3/17/25 RAM  6:36p| Format code 
 #.(50331.02   3/31/25 RAM 10:00a| Save log to docs  
+#.(50331.08   3/31/25 RAM  8:00p| Write and use setEnv
 
 ##PRGM     +====================+===============================================+
 ##ID 69.600. Main0              |
@@ -154,7 +156,7 @@
 //          global.aLogFile = path.join( __basedir2, `../._/LOGs/_v${_TS.slice(0,5)}/${aFile}_v${_TS}.log` ) 
        var  aLogFile        =  aFile.replace( /{aTD}/, _TS.slice(0,5) ).replace( /{aTS}/, _TS )
 //     var  aDir            = `._/LOGs/_v${_TS.slice(0,5)}/${ aFile.split( /[\\\/]/ ).slice(0,-1).join( "/") }` 
-        if (aFile.match( /docs\//)) {                                                   // .(50331.02.1 RAM Put log into /docs Beg)
+        if (aFile.match( /docs\// )) {                                                  // .(50331.02.1 RAM Put log into /docs Beg)
        var  aDir            = `${ aLogFile.split( /[\\\/]/ ).slice(0,-1).join( "/") }`
        var  aLogDir         =  path.join( `${__basedir}`, aDir )          
         } else {                                                                        // .(50331.02.1 Beg)
@@ -518,6 +520,18 @@ createDirectoryIfNotExists(dirPath).then( result => {
             }                                                                           // .(50107.03.2 End)
 // --------------------------------------------------------------
 
+  function  setEnv( aVar, aVal, aDir ) {                                                // .(50331.08.1 RAM Add setEnv Beg)
+            sayMsg( `AIC98[ 523]  Setting ${aVar} to: '${aVal}'`, -1 )
+       var  aEnvFile    =   FRT_path( aDir ? aDir : __basedir2, '.env' ) 
+       var  aEnvVar     =   aVar.toUpperCase()
+       var  mMyEnvs     =   readFileSync(  aEnvFile, 'ASCII' ).split( /\n/ )
+       var  iEnv        =   mMyEnvs.findIndex( aVar => aVar.match( new RegExp( `^ *${aEnvVar}` ) ) )
+            mMyEnvs[ iEnv ] = `  ${aEnvVar}="${aVal}"`            
+            process.env[    aEnvVar ] = aVal
+                            writeFileSync( aEnvFile , mMyEnvs.join( "\n" ) )                     
+            }                                                                           // .(50331.08.1 End)
+// --------------------------------------------------------------
+
   function  firstFile( aPath, reFind ) {                                                // .(40827.05.1 RAM Write firstFile)
             reFind  = typeof(reFind) == 'string' ? new RegExp( reFind.replace( /\\/g, "\\" ) ) : reFind
        var  mFiles1 = listFiles( aPath )
@@ -857,7 +871,7 @@ createDirectoryIfNotExists(dirPath).then( result => {
          ,  deleteFileSync, deleteFileASync, deleteFile: deleteFileSync                                     // .(40801.10.3)
          ,  appendFileSync, appendFileASync, appendFile: appendFileSync                                     // .(50210.02b.3)
          ,  copyFileSync,   copyFileASync,   copyFile:   copyFileSync                                       // .(50210.02.3)
-         ,  getDir, getFile, setVars, isCalled, isNotCalled                                                 // .(50201.04.21 RAM Added isNotCalled).(50125.01.9).(50107.03.3)
+         ,  setEnv, getDir, getFile, setVars, isCalled, isNotCalled                                         // .(50331.08.2).(50201.04.21 RAM Added isNotCalled).(50125.01.9).(50107.03.3)
          ,  __basedir:  __basedir, __dirname: __dirname,  AppName: aAppName                                 // .(40827.06.x ??).(40819.10.x RAM Add them to FRT)
          ,  __basedir2: __basedir2, exit_wCR                                                                // .(50129.02.3).(50126.03.23)
          ,  bDoit: bDoit, bDebug: bDebug, bQuiet: bQuiet, bForce: bForce                                    // .(50215.01.8 RAM Set bForce)

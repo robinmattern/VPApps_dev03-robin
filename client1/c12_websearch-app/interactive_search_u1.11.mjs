@@ -34,6 +34,7 @@
 #.(50330.04c  3/31/25 RAM  7:35p| Add web searchPrompt
 #.(50331.05   3/31/25 RAM  9:00p| Add ReponseFile to Stats and CSV
 #.(50331.07   3/31/25 RAM  9:30p| Don't prompt when inVSCode
+#.(50331.08   3/31/25 RAM 10:00p| Write and use setEnv
 
 ##PRGM     +====================+===============================================+
 ##ID 69.600. Main0              |
