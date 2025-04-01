@@ -32,7 +32,7 @@
 #.(50330.06   3/30/25 XAI  8:15p| Write and use wrap 
 #.(50330.06a  3/31/25 RAM  8:15a| Add indent to wrap
 #.(50331.03   3/31/25 RAM 12:20p| Write and use savStats  
-#.(50331.04   3/31/25 RAM  1:50p| Write and use getVars
+#.(50331.04   3/31/25 RAM  1:50p| Write and use getVars  
 #.(50330.04b  3/31/25 RAM  4:45p| Add more server info 
 #.(50330.04c  3/31/25 RAM  7:35p| Add web searchPrompt
 
