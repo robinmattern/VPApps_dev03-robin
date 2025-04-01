@@ -30,7 +30,7 @@
 #.(50330.06a  3/31/25 RAM  8:15a| Add indent to wrap
 #.(50331.02   3/31/25 RAM 10:00a| Save logs to docs     
 #.(50331.04   3/31/25 RAM  3:00p| Write and use getVars
-#.(50331.04b  3/31/25 RAM  7:15p| Update StatsFile name
+#.(50331.04b  3/31/25 RAM  7:15p| Update StatsFile name  
 #.(50330.04c  3/31/25 RAM  7:35p| Add web searchPrompt
 
 ##PRGM     +====================+===============================================+
