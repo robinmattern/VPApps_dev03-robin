@@ -32,6 +32,7 @@
 #.(50331.04   3/31/25 RAM  3:00p| Write and use getVars
 #.(50331.04b  3/31/25 RAM  7:15p| Update StatsFile name   
 #.(50330.04c  3/31/25 RAM  7:35p| Add web searchPrompt
+#.(50331.05   3/31/25 RAM  9:00p| Add ReponseFile to Stats and CSV
 
 ##PRGM     +====================+===============================================+
 ##ID 69.600. Main0              |
@@ -82,7 +83,8 @@ import { Stats } from "fs";
        var  aModel1          = 'gemma2:2b'          // 1.6  GB on rm231 
        var  aModel1          = 'granite3-dense:2b'  // 1.6  GB on rm231 
        var  aModel1          = 'qwen2:0.5b'         //  .35 GB on rm231  //#.(50327.05.1 RAM Smallest. Runs if dbugging or no command args given )
-     
+       var  aModel1          = 'qwen2-robin:latest' //  .35 GB on rm231 
+
 //     var  aModel1          = 'llama3.1:8b-instruct-q8_0' // 8.5  GB on rm228 
 //     var  aModel1          = 'llama3.1:latest'           // 4.9  GB on rm228 
 //     var  aModel1          = 'llama3.1:8b-instruct-q2_K' // 3.2  GB on rm228 // wierd results  
@@ -293,8 +295,8 @@ async function answerQuery( query, texts, document, webSearch ) {               
             pStats.query     =  query                                                   // .(50331.03.4 Beg)
             pStats.url       =  document
             pStats.websearch =  webSearch                                               // .(50330.04c.3 RAM Add)
-
             pStats.docs      = `${texts.length} Sources, ${aSources.length} bytes`
+            pParms.logfile   =  aLogFile                                                // .(50331.05.4 RAM Add logfile) 
             pParms.temp      =  aTemperature                                            
 
       var [ pSt_JSON, mCSV ] =  MWT.savStats(   pStats, pParms )
