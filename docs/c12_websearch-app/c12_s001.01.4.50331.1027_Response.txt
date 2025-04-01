@@ -454,7 +454,7 @@ Compined Prompt for Model qwen2:0.5b:
   
   Docs:   End of Sources
   Query:  Tell me about the city's restaurants
-  Prompt:{Query}.Summarize the information and provide an answer. Use only the information in the following articles to answer the question:{Text}
+  Prompt:{Query}.Summarize the information and provide an answer. Use only the information in the following articles to answer the question:{Docs}
 
 Ollama Model Response:
 ---------------------------------------------------------------------------------------------- 
