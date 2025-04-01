@@ -49,18 +49,20 @@
             aPath        = "file:///" + aPath.replace( /\\/g, "/").replace( /^\/([a-z])\//i, '$1:/' )
             }
     return  aPath            
-        }
+            }  // eof fixPath
 //  ------  -----------  =  ---------------------------------------------------------
 
   function  findReposDir( aDir)  { // Find "Repos" folder case-insensitively
        var  mDirs        =  readdirSync( aDir, { withFileTypes: true });
     return  mDirs.find(d => d.isDirectory() && d.name.toLowerCase() === 'repos')?.name || 'Repos';
-            };
+            };  // eof findReposDir 
+//  ------  -----------  =  ---------------------------------------------------------
 
-            Object.entries(  pLibs ).forEach( mLib => pLibs[ mLib[0] ] = fixPath( mLib[1] ) ) 
+            Object.entries(  pLibs ).forEach( mLib => { pLibs[ mLib[0] ] = fixPath( mLib[1] ) } ) 
+
     export  default  pLibs 
 
-//export default {
-//  Path1: join(fullPath, 'tools', 'lib1.mjs'),
-//  Path2: join(fullPath, 'tools', 'lib2.mjs'),
-//};
+//  export  default { 
+//            Path1: join(fullPath, 'tools', 'lib1.mjs'),
+//            Path2: join(fullPath, 'tools', 'lib2.mjs'),
+//            };
