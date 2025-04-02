@@ -43,6 +43,7 @@
 #.(50331.07   3/31/25 RAM  9:30p| Don't prompt when inVSCode
 #.(50331.08   3/31/25 RAM 10:00p| Write and use setEnv
 #.(50402.02   4/02/25 RAM  7:15a| Add bDebug Model warning
+#.(50402.02a  4/02/25 RAM  9:18a| Fix version string
 
 ##PRGM     +====================+===============================================+
 ##ID 69.600. Main0              |
@@ -68,7 +69,7 @@
 // --  ---  --------  =  --  =  ------------------------------------------------------  #  ---------------- #
       var { sayMsg, usrMsg, bDebug, bQuiet, bDoit } = FRT.setVars()
        var  aTS              =  FRT._TS
-       var  nVer             =  u1.12                                                   // .(50402.02.1 RAM Add Version)
+       var  nVer             = "u1.12"                                                  // .(50402.02a.1 RAM Add Version)
 
       var __basedir          =  FRT.__basedir
        var  aAppPath         =  FRT.__dirname
