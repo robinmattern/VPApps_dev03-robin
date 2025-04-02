@@ -36,6 +36,7 @@
 #.(50330.04b  3/31/25 RAM  4:45p| Add more server info 
 #.(50330.04c  3/31/25 RAM  7:35p| Add web searchPrompt
 #.(50331.05   3/31/25 RAM  9:00p| Add ResponseFile to Stats and CSV
+#.(50331.05c  3/31/25 RAM 11:00p| Fix Resp_Id for Stats and CSV
 
 ##PRGM     +====================+===============================================+
 ##ID 69.600. Main0              |
@@ -180,7 +181,7 @@ function  fmtResults(results) {
  */
   function  fmtStats( stats, parms ) {
 //    var [ aServer, aCPU_GPU_RAM ] = getServerInfo();                                  //#.(50330.04.5 RAM Use it).(50330.04b.1)
-            parms.resp_id  = FRT.getAppName( parms.logfile ).slice(0,24)                // .(50331.05.1) 
+            parms.resp_id  = parms.logfile.split( /[\\\/]/ ).pop().slice(0,24)          // .(50331.05c.1).(50331.05.1) 
       var [ aServer, aCPU_GPU, aRAM, aPC_Model, aOS ]  = getServerInfo();               // .(50330.04b.1)
        var  statsLines = [];
             statsLines.push(`Ollama Run Statistics:`);
@@ -224,7 +225,7 @@ function  fmtResults(results) {
   function  savStats( stats, parms ) {                                                  // .(50331.03.1 RAM Write savStats)
       var [ aServer, aCPU_GPU, aRAM, aPC_Model, aOS ]  = getServerInfo();               // .(50330.04b.6)
        var  pStats  = {};
-            pStats.RespId           =  parms.resp_id(0,11)                              // .(50331.05.4) 
+            pStats.RespId           =  parms.resp_id.slice(0,11)                        // .(50331.05c.2).(50331.05.4)  
             pStats.ModelName        =  parms.model
             pStats.ContextSize      =  parms.options.num_ctx 
             pStats.Temperature      =  parms.temp 
@@ -242,7 +243,7 @@ function  fmtResults(results) {
             pStats.OS               =  aOS                                               
             pStats.Computer         =  aPC_Model                                        // .(50330.04b.7 End)
             pStats.Server           =  aServer
-            pStats.ResponseFile     =  `file:///${parms.logfile}`                       // .(50331.05.5) 
+            pStats.ResponseFile     =  `file:///${parms.logfile}`                       // .(50331.05c.3).(50331.05.5) 
        var  mStats                  =  Object.entries( pStats ).map( pStat => pStat[1] )            
        var  aCSV                    = `"${ mStats.join( '","' ) }"`
 //     var  aFlds                   = `Model,URL,Docs,Query,Context,Duration,PromptEvalCount,EvalCount,EvalDuration,TokensPerSecond,Server,CPU_GPU_RAM`

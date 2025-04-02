@@ -78,7 +78,7 @@ import { Stats } from "fs";
 // Script configuration
 // --  ---  --------  =  --  =  ------------------------------------------------------  #  
 
-       var  bDebug           =  0                   // Debug flag
+       var  bDebug           =  1                   // Debug flag
 
 // Configure AI model
        var  aModel1          = 'llama'              // 4.7  GB on rm231 
@@ -86,7 +86,7 @@ import { Stats } from "fs";
        var  aModel1          = 'gemma2:2b'          // 1.6  GB on rm231 
        var  aModel1          = 'granite3-dense:2b'  // 1.6  GB on rm231 
        var  aModel1          = 'qwen2:0.5b'         //  .35 GB on rm231  //#.(50327.05.1 RAM Smallest. Runs if dbugging or no command args given )
-       var  aModel1          = 'qwen2-robin:latest' //  .35 GB on rm231 
+//     var  aModel1          = 'qwen2-robin:latest' //  .35 GB on rm231 
 
 //     var  aModel1          = 'llama3.1:8b-instruct-q8_0' // 8.5  GB on rm228 
 //     var  aModel1          = 'llama3.1:latest'           // 4.9  GB on rm228 
@@ -100,12 +100,16 @@ import { Stats } from "fs";
 
 // Process command line arguments
        var  pVars            =  MWT.getVars( FRT.__dirname )                                                // .(50331.04.3 RAM Get .env vars Beg)
-            aModel           =  pVars.MODEL       ||  aModel
-            nCTX_Size        = (pVars.CTX_SIZE    ||  nCTX_Size) * 1
-       var  nTemperature     = (pVars.TEMPERATURE || .07) * 1
+
+       var  aPlatform        =  pVars.PLATFORM.toUpperCase()                                                // .(50331.10.1 Use PLATFORM)
+//          aModel           =  pVars.MODEL       ||  aModel                                                //#.(50331.10.2)
+            aModel           =  pVars[`${aPlatform}_MODEL_NAME` ] || aModel1                                // .(50331.10.2)
+            nCTX_Size        = (pVars[`${aPlatform}_CTX_SIZE`   ] || nCTX_Size1 ) * 1                       // .(50331.10.3)
+       var  nTemperature     = (pVars[`${aPlatform}_TEMPERATURE`] || .07       ) * 1                        // .(50331.10.4)
+
        var  aSearch          =  pVars.SEARCH      || "Lexington Va"
        var  aAIPrompt        =  pVars.QUERY       || "What are the city's restaurants?"
-       var  aSysPrompt       =  pVars.SYS_PROMPT                                                            // .(50331.09.1 
+       var  aSysPrompt       =  pVars.SYS_PROMPT  || "Please use the information in the following text"     // .(50331.09.1) 
 
        var  mArgs            =  process.argv.slice(2)
        var  aModel           =  mArgs[0] ? mArgs[0] : aModel
@@ -126,7 +130,7 @@ import { Stats } from "fs";
 
        var  aRespId          = `${aAppDir.slice(0,3)}_${pVars.SESSION_ID}.${pVars.NEXT_POST}`               // .(50331.08.3 RAM Get RespId) 
        var  aNextPost        = `${ 1 + pVars.NEXT_POST * 1 }`.padStart( 2, "0" )                            // .(50331.08.4 RAM Set Next_Post) 
-                                FRT.setEnv( "NEXT_POST", aNextPost, FRT.__dirname)                          // .(50331.08.5) 
+//                              FRT.setEnv( "NEXT_POST", aNextPost, FRT.__dirname)                          // .(50331.08.5) 
 
 //     var  aLogFile         =      `./${aAppDir}/${aAppDir.slice(0,3)}_t001.01.4.${aTS}_Response.txt`      //#.(50331.02.5)
        var  aLogFile         = `./docs/${aAppDir}/${aRespId}.4.${aTS}_Response.txt`                         // .(50331.08.6).(50331.02.5 RAM put it in /docs)
@@ -137,23 +141,24 @@ import { Stats } from "fs";
 
 // Configure prompt and Ollama parameters
 //     var  aSysPrompt       = "Summarize the information and provide an answer. Use only the information in the following articles to answer the question:"
-       var  ollamaUrl        =  pVars.PLATFORM_URL // 'http://localhost:11434/api/generate'                 // .(50331.09.2 Adjust if Ollama runs elsewhere)
+       var  ollamaUrl        =  pVars[`${aPlatform}_API_URL`] // 'http://localhost:11434/api/generate'      // .(50331.09.2 Adjust if Ollama runs elsewhere)
 
        var  pParms           = 
              {  model        :  aModel
              ,  prompt       : `{Query}.${aSysPrompt} {Text}`
              ,  stream       :  true
              ,  options      :{ num_ctx: nCTX_Size 
-                              , temperature: nTemperature
+//                            , temperature: nTemperature
                                 }
                 }
 // --  ---  --------  =  --  =  ------------------------------------------------------  #  
 
-                                await main( ) 
+                                await main( pParms ) 
 
+                                FRT.setEnv( "NEXT_POST", aNextPost, FRT.__dirname)    
 // Main execution
 // --  ---  --------  =  --  =  ------------------------------------------------------  #  ---------------- #
-  async  function  main( ) {     
+  async  function  main( pParms ) {     
        let  searchPrompt, aiPrompt; // Prompt user for search and AI queries
   
         if (bDebug == true || bIsInVSCode ) {                                           //.(50331.07.2)
@@ -183,7 +188,8 @@ import { Stats } from "fs";
  */
 async function getNewsUrls( query ) {
   const url = `https://api.duckduckgo.com/?q=${encodeURIComponent(query)}&format=json`;
-  usrMsg(`  Fetching from: ${url}`);
+
+      usrMsg(`  Fetching from: "${url}"`);
   
   try {
     const response = await fetch(url);
@@ -248,8 +254,8 @@ async function getNewsUrls( query ) {
        var  texts = [];
        for (var url of urls) {
        try {
-       var  response = await fetch( url );
             usrMsg( `    Fetching ${url}`);
+       var  response         =  await fetch( url );
        var  html             =  await response.text();
        var  text             =  await MWT.htmlToText( html );
             texts.push(`Source:${url}\n${text}\n\n`);
@@ -273,17 +279,15 @@ async function answerQuery( query, texts, document, webSearch ) {               
             usrMsg( `\nCompined Prompt for Model ${pParms.model}:`)
             usrMsg( "---------------------------------------------------------------------------------------------- ")
   
-       var  aSources         =  texts.map((a, i) => `${i+1}.${MWT.fmtText(a)}`).join("\n")
-  
+       var  aSources         =  texts.map((a, i) => `${i+1}.${MWT.fmtText(a)}`).join("\n")  
         if (bPrtSources == 1) {
             usrMsg( `\n  Docs: \n${ MWT.wrap( aSources, nWdt , 2, 4 ) }`)               // .(50330.06a.6 RAM Add indent).(50331.01.3 RAM Was Texts).(50330.06.2 RAM Use Wrap)
-            usrMsg(   `  Docs: End of Sources`)                                       // .(50331.01.4)
+            usrMsg(   `  Docs:       End of Sources`)                                   // .(50331.01.4)
         } else {
-            usrMsg(   `  Docs:   ${texts.length} Sources,${ `${aSources.length}`.padStart(6) } bytes from ${document}`)        // .(50331b.01.5).(50331.01.5 RAM Add documents)
+            usrMsg(   `  Docs:      "${texts.length} Sources,${ `${aSources.length}`.padStart(6) } bytes from ${document}"`)   // .(50331b.01.5).(50331.01.5 RAM Add documents)
             }
-  
-            usrMsg(   `  Query:     "${query}"` )
             usrMsg(   `  SysPrompt: "${ pParms.prompt.replace( /{Text}/, "" ).replace( /{Query}\./, "" ) }"` )
+            usrMsg(   `  Query:     "${query}"` )
             usrMsg(   `  Prompt:    "{Query}. {SysPrompt}, {Docs}"` ) 
 
             pParms.prompt    =  pParms.prompt.replace( /{Query}/, query )
@@ -303,8 +307,8 @@ async function answerQuery( query, texts, document, webSearch ) {               
             pStats.url       =  document
             pStats.websearch =  webSearch                                               // .(50330.04c.3 RAM Add)
             pStats.docs      = `${texts.length} Sources, ${aSources.length} bytes`
-            pParms.logfile   = `${FRT.__baseDir}/${aLogFile}`                           // .(50331.05.6 RAM Add logfile) 
-            pParms.temp      =  aTemperature                                            
+            pParms.logfile   = `${FRT.__basedir}/${aLogFile}`                           // .(50331.05.6 RAM Add logfile) 
+            pParms.temp      =  nTemperature                                            
 
             usrMsg( "\n----------------------------------------------------------------------------------------------\n ")
             usrMsg(             MWT.fmtStats(   pStats, pParms ).join("\n"))
