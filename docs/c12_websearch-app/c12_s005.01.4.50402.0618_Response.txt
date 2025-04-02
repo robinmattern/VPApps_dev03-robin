@@ -1,0 +1,77 @@
+
+  Search Prompt: "Lexington Va"
+  AI Prompt:     "What are the city's restaurants?"
+  Fetching from: "https://api.duckduckgo.com/?q=Lexington%20Va&format=json"
+---------------------------------------------------------------------------------------------- 
+Response from DuckDuckGo:
+
+  API Response:
+
+  "AbstractURL": "https://en.wikipedia.org/wiki/Lexington%2C_Virginia",
+  "Results": "
+     http://lexingtonva.gov/
+       Official site
+     https://www.lexingtonva.gov/
+       Official site - Lexington, Virginia",
+  "RelatedTopics": "
+     https://duckduckgo.com/c/Lexington%2C_Virginia
+       Lexington, Virginia Category
+     https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+       National Register of Historic Places listings in Lexington, Virginia - This is a list of the National Register of Historic Places listings in Lexington, Virginia. This is intended to be a complete list of the properties and districts on the National Register of Historic Places in the independent city of Lexington, Virginia, United States.
+     https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+       Rockbridge County, Virginia
+     https://duckduckgo.com/c/Cities_in_Virginia
+       Cities in Virginia
+     https://duckduckgo.com/c/Flag_controversies_in_the_United_States
+       Flag controversies in the United States
+     https://duckduckgo.com/c/County_seats_in_Virginia
+       County seats in Virginia"
+
+  Found 5 URLs:
+    Fetching https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+    Fetching http://lexingtonva.gov/
+    Fetching https://www.lexingtonva.gov/
+    Fetching https://duckduckgo.com/c/Lexington%2C_Virginia
+    Fetching https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+
+Compined Prompt for Model llama3.1:latest:
+---------------------------------------------------------------------------------------------- 
+  Docs:      "5 Sources, 31713 bytes from https://en.wikipedia.org/wiki/Lexington%2C_Virginia"
+  SysPrompt: "Summarize the information and provide an answer. Use only the information in the following articles to answer the question: "
+  Query:     "What are the city's restaurants?"
+  Prompt:    "{Query}. {SysPrompt}, {Docs}"
+
+Ollama Model Response:
+---------------------------------------------------------------------------------------------- 
+Based on the provided articles, here is a summary of the city's restaurants:
+
+Lexington has a variety of small retail businesses, bed and breakfast inns, and restaurants that cater to local, tourist, and collegiate
+    clientele. Some specific mentions include:
+
+* Hull's Drive In theater, which attracts visitors to the area
+* The Red Hen restaurant, which was at the center of a controversy in 2018 when its co-owner asked White House Press Secretary Sarah Huckabee
+    Sanders to leave due to her role in the Trump administration.
+* Other restaurants are mentioned as part of the city's downtown historic district and attractions, but specific names are not provided.
+
+It appears that there is no comprehensive list of restaurants in Lexington available through these sources. However, visitors can expect to find a
+    variety of small, local eateries and establishments catering to different tastes and preferences.
+
+----------------------------------------------------------------------------------------------
+ 
+Ollama Run Statistics:
+--------------------------------------------
+    Server: rm228p-ws11_Robins-Laptop (10.0.0.126)
+    Operating System:  Windows 11
+    CPU/GPU/RAM:       Intel 7-13700HX, 2.10 GHz, NVidia RTX360, 32 GB
+    Computer:          HP Omen
+    Session.Post ID:   c12_t004.16.4.50402.0618
+    Model Name:        llama3.1:latest
+    Temperature:       0.07
+    Context Window:    16000 bytes
+    Total Duration:    27.46 seconds
+    Eval Count:        171 tokens
+    Eval Duration:     7.15 seconds
+    Prompt Eval Count: 8390 tokens
+    Tokens per Second: 23.91 seconds
+
+---------------------------------------------------------------------------------------------- 

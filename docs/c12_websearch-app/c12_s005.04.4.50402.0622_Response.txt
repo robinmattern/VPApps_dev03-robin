@@ -1,0 +1,68 @@
+
+  Search Prompt: "Lexington Va"
+  AI Prompt:     "What are the city's restaurants?"
+  Fetching from: "https://api.duckduckgo.com/?q=Lexington%20Va&format=json"
+---------------------------------------------------------------------------------------------- 
+Response from DuckDuckGo:
+
+  API Response:
+
+  "AbstractURL": "https://en.wikipedia.org/wiki/Lexington%2C_Virginia",
+  "Results": "
+     http://lexingtonva.gov/
+       Official site
+     https://www.lexingtonva.gov/
+       Official site - Lexington, Virginia",
+  "RelatedTopics": "
+     https://duckduckgo.com/c/Lexington%2C_Virginia
+       Lexington, Virginia Category
+     https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+       National Register of Historic Places listings in Lexington, Virginia - This is a list of the National Register of Historic Places listings in Lexington, Virginia. This is intended to be a complete list of the properties and districts on the National Register of Historic Places in the independent city of Lexington, Virginia, United States.
+     https://duckduckgo.com/c/Rockbridge_County%2C_Virginia
+       Rockbridge County, Virginia
+     https://duckduckgo.com/c/Cities_in_Virginia
+       Cities in Virginia
+     https://duckduckgo.com/c/Flag_controversies_in_the_United_States
+       Flag controversies in the United States
+     https://duckduckgo.com/c/County_seats_in_Virginia
+       County seats in Virginia"
+
+  Found 5 URLs:
+    Fetching https://en.wikipedia.org/wiki/Lexington%2C_Virginia
+    Fetching http://lexingtonva.gov/
+    Fetching https://www.lexingtonva.gov/
+    Fetching https://duckduckgo.com/c/Lexington%2C_Virginia
+    Fetching https://duckduckgo.com/National_Register_of_Historic_Places_listings_in_Lexington%2C_Virginia
+
+Compined Prompt for Model qwen2:1.5b:
+---------------------------------------------------------------------------------------------- 
+  Docs:      "5 Sources, 31713 bytes from https://en.wikipedia.org/wiki/Lexington%2C_Virginia"
+  SysPrompt: "Summarize the information and provide an answer. Use only the information in the following articles to answer the question: "
+  Query:     "What are the city's restaurants?"
+  Prompt:    "{Query}. {SysPrompt}, {Docs}"
+
+Ollama Model Response:
+---------------------------------------------------------------------------------------------- 
+Please provide more information about the permit application events and parade permits in Lexington. They do not include any specific details or
+    information that you are looking for. Can you please clarify what part of the permit application process, parade permits, or events in Lexington
+    you need assistance with?
+
+----------------------------------------------------------------------------------------------
+ 
+Ollama Run Statistics:
+--------------------------------------------
+    Server: rm228p-ws11_Robins-Laptop (10.0.0.126)
+    Operating System:  Windows 11
+    CPU/GPU/RAM:       Intel 7-13700HX, 2.10 GHz, NVidia RTX360, 32 GB
+    Computer:          HP Omen
+    Session.Post ID:   c12_t004.19.4.50402.0622
+    Model Name:        qwen2:1.5b
+    Temperature:       0.07
+    Context Window:    4000 bytes
+    Total Duration:    3.40 seconds
+    Eval Count:        55 tokens
+    Eval Duration:     0.61 seconds
+    Prompt Eval Count: 2002 tokens
+    Tokens per Second: 89.71 seconds
+
+---------------------------------------------------------------------------------------------- 
